@@ -1,13 +1,13 @@
-﻿CREATE TABLE [dbo].[Student] (
-  [Student_Admin] VARCHAR (12) NOT NULL PRIMARY KEY,
-  [Student_name] VARCHAR (60) NOT NULL,
-  [Email] VARCHAR (60) NOT NULL,
-  [Password] BINARY(64) NOT NULL,
-  [School] VARCHAR (12) NOT NULL,
-  [Gender] char(1) NOT NULL,
-  [DOB] DATE NOT NULL,
-  [PEM Group] VARCHAR (12) NOT NULL,
+﻿
 
+CREATE TABLE [dbo].[Feedback] (
+    [FeedbackID]    INT            NOT NULL,
+    [ProgCode]      INT            NOT NULL,
+    [Student_Admin] VARCHAR (12)            NOT NULL,
+    [Rate]          TINYINT        NOT NULL,
+    [Recommends]    NVARCHAR (MAX) NOT NULL,
+    [Comments]      NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([FeedbackID] ASC),
+    CONSTRAINT [FK_Feedback_Trip] FOREIGN KEY ([ProgCode]) REFERENCES [dbo].[Trip] ([ProgCode]),
+    CONSTRAINT [FK_Feedback_Student] FOREIGN KEY ([Student_Admin]) REFERENCES [dbo].[Student] ([Student_Admin])
 );
-
-
