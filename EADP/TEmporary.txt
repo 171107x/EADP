@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[Nomination] (
+    [NominationID] INT          IDENTITY (1, 1) NOT NULL,
+    [StaffID]      INT          NOT NULL,
+    [StudentAdmin] VARCHAR (12) NOT NULL,
+    [ProgCode]     INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([NominationID] ASC), 
+    CONSTRAINT [FK_Nomination_ToTable] FOREIGN KEY ([StaffID]) REFERENCES [dbo].[Staff]([StaffID]), 
+    CONSTRAINT [FK_Nomination_ToTable_1] FOREIGN KEY ([StudentAdmin]) REFERENCES [dbo].[Student]([StudentAdmin])
+);
+
+CREATE TABLE [dbo].[FlightDetails] (
+    [FlightNo]      VARCHAR (1) NOT NULL,
+    [ProgCode]      INT         NOT NULL,
+    [DepartureDate] DATETIME    NOT NULL,
+    [ArrivalDate]   DATETIME    NOT NULL,
+    [DepartureTime] TIME (7)    NOT NULL,
+    [ArrivalTime]   TIME (7)    NOT NULL,
+    [FlightPrice]   FLOAT (53)  NOT NULL,
+    [NoOfStudent]   INT         NOT NULL,
+    [NoOfStaff]     INT         NOT NULL,
+    PRIMARY KEY CLUSTERED ([FlightNo] ASC),
+    CONSTRAINT [FK_FlightDetails_ToTable] FOREIGN KEY ([ProgCode]) REFERENCES [dbo].[Trip] ([ProgCode])
+);
+
