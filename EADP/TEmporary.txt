@@ -9,7 +9,7 @@ CREATE TABLE [dbo].[Nomination] (
 );
 
 CREATE TABLE [dbo].[FlightDetails] (
-    [FlightNo]      VARCHAR (1) NOT NULL,
+    [FlightNo]      VARCHAR (12) NOT NULL,
     [ProgCode]      INT         NOT NULL,
     [DepartureDate] DATETIME    NOT NULL,
     [ArrivalDate]   DATETIME    NOT NULL,
