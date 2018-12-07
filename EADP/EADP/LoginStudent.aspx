@@ -61,7 +61,7 @@
                     <asp:Button runat="server" cssClass="btn btn-primary btn-block" Text="Log in"></asp:Button>
                 </div>
                 <div class="clearfix">
-                    <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+                    <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</input></label>
                     <a href="#" class="pull-right">Forgot Password?</a>
                 </div>                   
             <p class="text-center"><a href="#">Login As Staff</a></p>
