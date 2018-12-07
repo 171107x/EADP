@@ -12,7 +12,9 @@
     <script src="Scripts/bootstrap.min.js"></script>    
     <style>        
         body{
-          background-image:url('Images/wallpaper2.jpg')
+            background-repeat:no-repeat;
+            background-image:url('Images/wallpaper2.jpg');
+            background-size: 100%;
       }        
         .auto-style14 {
             padding: 120px 100px 80px 100px;
@@ -23,13 +25,19 @@
         }
         .login-form {
 		width: 340px;
-    	margin: 50px auto;
+        height: 500px;
+    	margin: 30px 50px 50px 50px auto;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
 	}
          .form1 {
     	    margin-bottom: 15px;
             background: #f7f7f7;
             box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-            padding: 30px;
+            padding:30px;
+
         }
         .login-form h2 {
             margin: 0 0 15px;
