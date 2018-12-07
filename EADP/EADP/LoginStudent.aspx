@@ -12,24 +12,25 @@
     <script src="Scripts/bootstrap.min.js"></script>    
     <style>        
         body{
-          background-image:url('Images/wallpaper2.jpg')
+            background-repeat:no-repeat;
+            background-image:url('Images/wallpaper2.jpg');
+            background-size: 100%;
       }        
-        .auto-style14 {
-            padding: 120px 100px 80px 100px;
-            margin: 35px auto 100px auto;
-            background-image: url('Images/panel.png');
-            width: 267px;
-            height: 286px;
-        }
         .login-form {
 		width: 340px;
-    	margin: 50px auto;
+        height: 500px;
+    	margin: 30px 50px 50px 50px auto;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
 	}
          .form1 {
     	    margin-bottom: 15px;
             background: #f7f7f7;
             box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-            padding: 30px;
+            padding:30px;
+
         }
         .login-form h2 {
             margin: 0 0 15px;
@@ -61,7 +62,7 @@
                     <asp:Button runat="server" cssClass="btn btn-primary btn-block" Text="Log in"></asp:Button>
                 </div>
                 <div class="clearfix">
-                    <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</input></label>
+                    <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
                     <a href="#" class="pull-right">Forgot Password?</a>
                 </div>                   
             <p class="text-center"><a href="#">Login As Staff</a></p>
