@@ -52,14 +52,14 @@
             <div class="form1">    
                 <h2 class="text-center">Log in</h2>       
                 <div class="form-group">                    
-                    <asp:TextBox runat="server" ID="tbEmail" CssClass="form-control" placeholder="Email"></asp:TextBox>                     
+                    <asp:TextBox runat="server" ID="tbEmail" CssClass="form-control" placeholder="Email" TextMode="Email"></asp:TextBox>                     
                   
                 </div>
                 <div class="form-group">
-                    <asp:TextBox runat="server" ID="tbPassword" CssClass="form-control" placeholder="Password"></asp:TextBox> 
+                    <asp:TextBox runat="server" ID="tbPassword" CssClass="form-control" placeholder="Password" TextMode="Password"></asp:TextBox> 
                 </div>
                 <div class="form-group">                    
-                    <asp:Button runat="server" cssClass="btn btn-primary btn-block" Text="Log in"></asp:Button>
+                    <asp:Button runat="server" cssClass="btn btn-primary btn-block" Text="Log in" OnClick="Unnamed1_Click"></asp:Button>
                 </div>
                 <div class="clearfix">
                     <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
@@ -68,7 +68,7 @@
             <p class="text-center"><a href="#">Login As Staff</a></p>
           </div>    
     </div> 
-    
+    <asp:Label runat="server" Text="" ID="tbLabel"></asp:Label>
     </form>
     
 </body>

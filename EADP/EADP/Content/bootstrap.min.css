@@ -2984,7 +2984,6 @@ output {
     }
 
 textarea.form-control {
-    height: auto;
 }
 
 input[type=search] {
