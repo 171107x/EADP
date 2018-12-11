@@ -14,7 +14,7 @@ namespace EADP.DAL
 
         public string PassportNO { get;set;}
 
-        public string PassportExpiry{ get;set;}
+        public DateTime PassportExpiry { get;set;}
         public string DietConstraint{ get;set;}
 
         public string MedicalHistory{ get;set;}
