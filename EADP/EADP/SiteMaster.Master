@@ -35,7 +35,7 @@
                             <li style="color:white;"class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
                             <li style="color:white;"class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Trips</a></li>
                             <li style="color:white;"class="active"><a href="#"><span class="glyphicon glyphicon-briefcase"></span>Statistics</a></li>
-                            <li style="color:white;"class="active"><a href="#"><span class="glyphicon glyphicon-earphone"></span>F.A.Q</a></li>
+                            <li style="color:white;"class="active"><a href="FAQ.aspx"><span class="glyphicon glyphicon-earphone"></span>F.A.Q</a></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
