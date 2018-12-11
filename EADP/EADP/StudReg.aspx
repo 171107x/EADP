@@ -71,7 +71,7 @@
             <div class="form-group">
                     <asp:Label ID="Label10" runat="server" Text="Passport Expiry"></asp:Label>
                              
-                   <asp:TextBox runat="server" ID="tdPassportE" CssClass="form-control" TextMode="Date"></asp:TextBox> 
+                   <asp:TextBox runat="server" ID="tbPassportE" CssClass="form-control" TextMode="Date"></asp:TextBox> 
                 </div>
            <div class="form-group">
                     <asp:Label ID="Label11" runat="server" Text="Diet Constraint"></asp:Label>                   
@@ -88,7 +88,7 @@
                 
                 </div>         
         <div style="text-align:center;" draggable="auto">
-            <asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn" />
+            <asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn" OnClick="Button1_Click" />
             <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn" />
             </div>
        
