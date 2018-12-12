@@ -34,7 +34,7 @@ namespace EADP
             da = new SqlDataAdapter(sqlCommand.ToString(), myConn);
             da.SelectCommand.Parameters.AddWithValue("paraEmail", tbEmail.Text);
             da.SelectCommand.Parameters.AddWithValue("paraPassword", Encryption.MD5Hash(tbPassword.Text));
-            //da = new SqlDataAdapter("Select * from Student where Email = '" + tbEmail.Text + "' and StudentPassword = HASHBYTES('SHA2_512', '" + tbPassword.Text + "') ", DBConnect);
+            
 
             // fill dataset
             da.Fill(ds);

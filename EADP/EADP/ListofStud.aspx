@@ -6,7 +6,7 @@
         <div class="container" style="text-align:center;">
         <asp:Label runat="server" style="" ID="ProgCode"></asp:Label> 
             </div>       
-        <asp:GridView runat="server" ID="GridViewTD" CssClass="table table-striped" AutoGenerateColumns="False">
+        <asp:GridView runat="server" ID="GridViewTD" CssClass="table table-striped" AutoGenerateColumns="False" OnSelectedIndexChanged="GridViewTD_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="StudentAdmin" HeaderText="Student Admin" />
             <asp:BoundField DataField="StudentName" HeaderText="Student Name" />
@@ -16,6 +16,9 @@
             <asp:CommandField SelectText="More Details" ShowSelectButton="True" />
         </Columns>
         </asp:GridView>
+        
     </div>
     
+    <asp:Button ID="Button1" runat="server" Text="Download as PDF" Width="154px" OnClick="Button1_Click" />
+      
 </asp:Content>
