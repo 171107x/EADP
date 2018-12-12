@@ -110,6 +110,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Statistics.aspx" />
+    <Content Include="Status.aspx" />
     <Content Include="StudAcc.aspx" />
     <Content Include="StudentDetails.aspx" />
     <Content Include="Survey.aspx" />
@@ -203,6 +204,13 @@
     </Compile>
     <Compile Include="Statistics.aspx.designer.cs">
       <DependentUpon>Statistics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudAcc.aspx.cs">
       <DependentUpon>StudAcc.aspx</DependentUpon>
