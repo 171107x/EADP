@@ -101,6 +101,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="FAQ.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="LoginStaff.aspx" />
     <Content Include="LoginStudent.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -158,6 +159,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginStaff.aspx.cs">
+      <DependentUpon>LoginStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginStaff.aspx.designer.cs">
+      <DependentUpon>LoginStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginStudent.aspx.cs">
       <DependentUpon>LoginStudent.aspx</DependentUpon>

@@ -50,7 +50,7 @@
     <form id="form1" runat="server">    
         <div class="login-form"> 
             <div class="form1">    
-                <h2 class="text-center">Log in</h2>       
+                <h2 class="text-center">Student Log in</h2>       
                 <div class="form-group">                    
                     <asp:TextBox runat="server" ID="tbEmail" CssClass="form-control" placeholder="Email" TextMode="Email"></asp:TextBox>                     
                   
