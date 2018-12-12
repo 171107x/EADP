@@ -3,12 +3,15 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <script src="Scripts/jquery-2.2.4.min.js"></script>
+    
+<head runat="server">
+    <%--<script src="Scripts/jquery-2.2.4.min.js"></script>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <script src="Scripts/bootstrap.min.js"></script>
-<head runat="server">
-
+    <script src="Scripts/bootstrap.min.js"></script>--%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -35,8 +38,20 @@
                             <li style="color:white;"class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
                             <li style="color:white;"class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Trips</a></li>
                             <li style="color:white;"class="active"><a href="#"><span class="glyphicon glyphicon-briefcase"></span>Statistics</a></li>
-                            <li style="color:white;"class="active"><a href="FAQ.aspx"><span class="glyphicon glyphicon-earphone"></span>F.A.Q</a></li>
+                            <li style="color:white;"class="active"><a href="FAQ.aspx"><span class="glyphicon glyphicon-earphone"></span>F.A.Q</a></li>                            
+                            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                         </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown"><a class="dropdown-toggle" id="username" data-toggle="dropdown" href="#" style="color:white;"><span class="caret">[Name]</span></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Account</a></li>
+                              <li><a href="#">Setting</a></li>                              
+                            </ul>
+                          </li>
+                        </ul>
+
+                        
+                        
                     </div>
                     <!--/.nav-collapse -->
                 </div>
@@ -47,5 +62,6 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
+    
 </body>
 </html>
