@@ -17,7 +17,7 @@ namespace EADP
 
         protected void submitBtn_Click(object sender, EventArgs e)
         {
-            string SurveyID = "S01";
+            string SurveyID = String.Format("S{0}",tbAdmin.Text.ToString());
             string studentAdmin = tbAdmin.Text.ToString();
             string q1Ans = RadioButtonList1.SelectedValue.ToString();
             string q2Ans = RadioButtonList2.SelectedValue.ToString();
@@ -29,6 +29,7 @@ namespace EADP
             Survey surveyObj = new Survey();
             SurveyDAO surDAO = new SurveyDAO();
             surDAO.InsertSurveyAnswers(SurveyID,studentAdmin, q1Ans, q2Ans, q3Ans, q4Ans, q5Ans, q6Ans, q7Ans);
+            Response.Redirect("Statistics.aspx");
         }
     }
 }
