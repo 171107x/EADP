@@ -41,7 +41,7 @@ namespace EADP
             int rec_cnt = ds.Tables[0].Rows.Count;
             if (rec_cnt > 0)
             {
-                Session["username"] = tbEmail.Text;
+                Session["email"] = tbEmail.Text;
                 Response.Redirect("home.aspx");
 
             }

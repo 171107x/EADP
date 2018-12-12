@@ -14,26 +14,20 @@ namespace EADP.DAL
         public int InsertStudReg(String studentAdmin, string tripID, string nationality, string MobileNO, string PassportNO, DateTime PassportExpiry, string DietConstraint, string MedicalHistory, string FASscheme, string Remarks)
         {
             StringBuilder sqlStr = new StringBuilder();
-            int result = 0;    // Execute NonQuery return an integer value
+            int result = 0;    
             SqlCommand sqlCmd = new SqlCommand();
-            // Step1 : Create SQL insert command to add record to TDMaster using     
-
-            //         parameterised query in values clause
-            //
+            
             sqlStr.AppendLine("INSERT INTO RegisteredStudent (StudentAdmin, TripID, Nationality, MobileNO, ");
             sqlStr.AppendLine("PassportNO,PassportExpiry,DietConstraint,MedicalHistory,FASscheme,Remarks)");
             sqlStr.AppendLine("VALUES (@paraStudAdmin,@paraTripID, @paraNationality, @paraMobileNO,");
             sqlStr.AppendLine("@paraPassportNO,@paraPassportExpiry,@paraDiet,@paraMedHist,@paraFAS,@paraRemarks)");
-
-
-            // Step 2 :Instantiate SqlConnection instance and SqlCommand instance
+                                   
 
             SqlConnection myConn = new SqlConnection(DBConnect);
 
             sqlCmd = new SqlCommand(sqlStr.ToString(), myConn);
 
-            // Step 3 : Add each parameterised query variable with value
-            //          complete to add all parameterised queries
+            
             sqlCmd.Parameters.AddWithValue("@paraStudAdmin", studentAdmin);
             sqlCmd.Parameters.AddWithValue("@paraTripID", tripID);
             sqlCmd.Parameters.AddWithValue("@paraNationality", nationality);
@@ -45,12 +39,12 @@ namespace EADP.DAL
             sqlCmd.Parameters.AddWithValue("@paraFAS", FASscheme);
             sqlCmd.Parameters.AddWithValue("@paraRemarks", Remarks);
 
-            // Step 4 Open connection the execute NonQuery of sql command   
+            
 
             myConn.Open();
             result = sqlCmd.ExecuteNonQuery();
 
-            // Step 5 :Close connection
+           
             myConn.Close();
 
             return result;

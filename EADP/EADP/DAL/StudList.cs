@@ -11,6 +11,7 @@ namespace EADP.DAL
         public string studentName { get; set; }
         public string gender { get; set; }
         public string diploma { get; set; }
+        public DateTime DOB { get; set; }
         public string pemGroup { get; set; }
         public string nationality { get; set; }
         public string passportNo { get; set; }

@@ -29,9 +29,7 @@ namespace EADP
 
         protected void GridViewTD_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridViewRow row = GridViewTD.SelectedRow;
-            // In this grid, the first cell (index 0) contains
-            // the TD Account.
+            GridViewRow row = GridViewTD.SelectedRow;           
             Session["studInfo"] = row.Cells[0].Text;
             Response.Redirect("StudentDetails.aspx");
         }

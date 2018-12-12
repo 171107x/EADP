@@ -20,5 +20,10 @@ namespace EADP
                 // Do whatever you were going to do.
             }
         }
+        protected void Logout_OnClick(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("LoginStudent.aspx");
+        }
     }
 }

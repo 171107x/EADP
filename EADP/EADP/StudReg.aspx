@@ -10,47 +10,55 @@
     <div class="container" style="text-align:center;">
         <asp:Label ID="Label1" runat="server"></asp:Label>
     </div>
-    <div class="container">
-        <div class="form-group">
-            <asp:Label ID="LabelCourse" runat="server" Text="Study Diploma"></asp:Label>
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" Height="30px" Width="450px" >
-                <asp:ListItem>DIT</asp:ListItem>
-                <asp:ListItem>DBI</asp:ListItem>
-                <asp:ListItem>DFI</asp:ListItem>
-                <asp:ListItem>DBA</asp:ListItem>
-                <asp:ListItem>DIS</asp:ListItem>
-                <asp:ListItem>DCS</asp:ListItem>
-            </asp:RadioButtonList>
-        </div>
-        <div class="form-group">
-            <asp:Label ID="Label2" runat="server" Text="Admin No"></asp:Label>
-                
-            <asp:TextBox ID="tbAdmin" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="form-group">                
-                    <asp:Label ID="Label3" runat="server" Text="Name"></asp:Label>                
-                    <asp:TextBox ID="tbName" runat="server" CssClass="form-control"></asp:TextBox>
-            </div>
-               
-            <div class="form-group">
-                    <asp:Label ID="Label4" runat="server" Text="Gender"></asp:Label>
-                                 
-                    <asp:RadioButtonList ID="RadioButtonList2" runat="server" RepeatDirection="Horizontal" Height="30px" Width="450px">
-                        <asp:ListItem Value="M">Male</asp:ListItem>
-                        <asp:ListItem Value="F">Female</asp:ListItem>
-                    </asp:RadioButtonList>                    
-                </div>
-            <div class="form-group">
-                    <asp:Label ID="Label5" runat="server" Text="Date Of Birth"></asp:Label>
-                                 
-                    <asp:TextBox runat="server" ID="TextBoxDB" CssClass="form-control" TextMode="Date"></asp:TextBox>             
-               </div>
-            <div class="form-group">
-                
-                    <asp:Label ID="Label6" runat="server" Text="PEM Group"></asp:Label>
-                               
-                    <asp:TextBox runat="server" ID="tbPEM" CssClass="form-control"></asp:TextBox>                
-               </div>
+    <div class="container">        
+        <table class="table">
+            <tr>
+                <td class="auto-style1">Study Diploma</td>
+                <td>
+                    <asp:Label ID="LblDiploma" runat="server"></asp:Label>
+                </td>
+            </tr>
+        </table>
+        <table class="table">
+            <tr>
+                <td class="auto-style1">Admin No</td>
+                <td>
+                    <asp:Label ID="Label14" runat="server"></asp:Label>
+                </td>
+            </tr>
+        </table>        
+         <table class="table">
+            <tr>
+                <td class="auto-style1">Name</td>
+                <td>
+                    <asp:Label ID="Label2" runat="server"></asp:Label>
+                </td>
+            </tr>
+        </table> 
+        <table class="table">
+            <tr>
+                <td class="auto-style1">Gender</td>
+                <td>
+                    <asp:Label ID="Label3" runat="server"></asp:Label>
+                </td>
+            </tr>
+        </table> 
+        <table class="table">
+            <tr>
+                <td class="auto-style1">Date of Birth</td>
+                <td>
+                    <asp:Label ID="Label4" runat="server"></asp:Label>
+                </td>
+            </tr>
+        </table>                 
+        <table class="table">
+            <tr>
+                <td class="auto-style1">PEM Group</td>
+                <td>
+                    <asp:Label ID="Label5" runat="server"></asp:Label>
+                </td>
+            </tr>
+        </table> 
                 <div class="form-group">
                     <asp:Label ID="Label7" runat="server" Text="Nationality"></asp:Label>
                                 

@@ -21,9 +21,7 @@ namespace EADP.DAL
 
             StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i < result.Length; i++)
-            {
-                //change it into 2 hexadecimal digits  
-                //for each byte  
+            {                
                 strBuilder.Append(result[i].ToString("x2"));
             }
 

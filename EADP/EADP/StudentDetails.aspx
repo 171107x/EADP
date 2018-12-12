@@ -11,40 +11,39 @@
             <tr>
                 <td class="auto-style1">Student Admin:</td>
                 <td>
-                    <asp:Label ID="LblCustId" runat="server"></asp:Label>
+                    <asp:Label ID="LblAdmin" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style1">Student Name :</td>
-                <td>
-                    <asp:Label ID="Label1" runat="server" Text=" "></asp:Label>
-                    <asp:Label ID="LblCustname" runat="server"></asp:Label>
+                <td>                    
+                    <asp:Label ID="LblStudname" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style1">Gender</td>
                 <td>
-                    <asp:Label ID="LblAcno" runat="server"></asp:Label>
+                    <asp:Label ID="LblGender" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style1">School</td>
                 <td>
 
-                    <asp:Label ID="LblPrincipal" runat="server"></asp:Label>
+                    <asp:Label ID="LblSchool" runat="server"></asp:Label>
                    
                 </td>
             </tr>
             <tr>
                 <td class="auto-style1">PEMGroup</td>
                 <td>
-                    <asp:Label ID="LblMaturedDte" Text="" runat="server"></asp:Label>
+                    <asp:Label ID="LblPEMGroup" Text="" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style1">Nationality</td>
                 <td>
-                    <asp:Label ID="LblMaturedAmt" Text="" runat="server"></asp:Label>
+                    <asp:Label ID="LblNationality" Text="" runat="server"></asp:Label>
                 </td>
             </tr>            
             <tr>

@@ -65,7 +65,7 @@
                     <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
                     <a href="#" class="pull-right">Forgot Password?</a>
                 </div>                   
-            <p class="text-center"><a href="#">Login As Staff</a></p>
+            <p class="text-center"><a href="LoginStaff.aspx">Login As Staff</a></p>
           </div>    
     </div> 
     <asp:Label runat="server" Text="" ID="tbLabel"></asp:Label>

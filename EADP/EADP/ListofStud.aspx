@@ -16,9 +16,9 @@
             <asp:CommandField SelectText="More Details" ShowSelectButton="True" />
         </Columns>
         </asp:GridView>
-        
+        <asp:Button ID="Button1" runat="server" Text="Download as PDF" Width="154px" OnClick="Button1_Click" />
     </div>
     
-    <asp:Button ID="Button1" runat="server" Text="Download as PDF" Width="154px" OnClick="Button1_Click" />
+    
       
 </asp:Content>

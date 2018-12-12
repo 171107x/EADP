@@ -22,67 +22,58 @@ namespace EADP {
         protected global::System.Web.UI.WebControls.Label ProgCode;
         
         /// <summary>
-        /// LblCustId control.
+        /// LblAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblCustId;
+        protected global::System.Web.UI.WebControls.Label LblAdmin;
         
         /// <summary>
-        /// Label1 control.
+        /// LblStudname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label LblStudname;
         
         /// <summary>
-        /// LblCustname control.
+        /// LblGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblCustname;
+        protected global::System.Web.UI.WebControls.Label LblGender;
         
         /// <summary>
-        /// LblAcno control.
+        /// LblSchool control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblAcno;
+        protected global::System.Web.UI.WebControls.Label LblSchool;
         
         /// <summary>
-        /// LblPrincipal control.
+        /// LblPEMGroup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblPrincipal;
+        protected global::System.Web.UI.WebControls.Label LblPEMGroup;
         
         /// <summary>
-        /// LblMaturedDte control.
+        /// LblNationality control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMaturedDte;
-        
-        /// <summary>
-        /// LblMaturedAmt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMaturedAmt;
+        protected global::System.Web.UI.WebControls.Label LblNationality;
         
         /// <summary>
         /// Label3 control.
