@@ -96,10 +96,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery.Jcrop.css" />
+    <Content Include="Content\jquery.Jcrop.min.css" />
+    <Content Include="scripts\jquery.color.js" />
+    <Content Include="scripts\jquery.Jcrop.js" />
+    <Content Include="scripts\jquery.Jcrop.min.js" />
+    <Content Include="scripts\jquery.min.js" />
     <Content Include="FAQ.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="ListofStud.aspx" />
@@ -109,6 +116,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Password.aspx" />
+    <Content Include="ProfilePic.aspx" />
+    <Content Include="ProfilePic\download.jpg" />
+    <Content Include="ProfilePic\download1.jpg" />
+    <Content Include="ProfilePic\nyp.jpg" />
     <Content Include="Statistics.aspx" />
     <Content Include="Status.aspx" />
     <Content Include="StudAcc.aspx" />
@@ -145,6 +157,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Encryption.cs" />
     <Compile Include="DAL\StudentLogin.cs" />
     <Compile Include="DAL\StudentLoginDAO.cs" />
@@ -189,6 +208,20 @@
     </Compile>
     <Compile Include="LoginStudent.aspx.designer.cs">
       <DependentUpon>LoginStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Password.aspx.cs">
+      <DependentUpon>Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Password.aspx.designer.cs">
+      <DependentUpon>Password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilePic.aspx.cs">
+      <DependentUpon>ProfilePic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfilePic.aspx.designer.cs">
+      <DependentUpon>ProfilePic.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SiteMaster.Master.cs">

@@ -100,7 +100,7 @@ namespace EADP.DAL
 
                 DataRow row = ds.Tables["TableTD"].Rows[0];
                 myTD.studentAdmin = row["StudentAdmin"].ToString();
-                myTD.studentName = row["StudentName"].ToString();
+                myTD.studentName = row["StudentName"].ToString();                
                 myTD.gender = row["Gender"].ToString();
                 myTD.diploma = row["School"].ToString();
                 myTD.pemGroup = row["PEMGroup"].ToString();
@@ -157,6 +157,7 @@ namespace EADP.DAL
                 DataRow row = ds.Tables["TableTD"].Rows[0];
                 myTD.studentAdmin = row["StudentAdmin"].ToString();
                 myTD.studentName = row["StudentName"].ToString();
+                myTD.studentPassword = row["StudentPassword"].ToString();
                 myTD.gender = row["Gender"].ToString();
                 myTD.diploma = row["School"].ToString();
                 myTD.DOB = Convert.ToDateTime(row["DOB"].ToString());

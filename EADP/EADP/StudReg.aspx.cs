@@ -16,7 +16,7 @@ namespace EADP
             Label1.Text = "<h1>Program Registration</h1>";
             StudList tdList = new StudList();
             StudListDAO tdDAO = new StudListDAO();
-            tdList = tdDAO.getRegbyStudAdmin(Session["Email"].ToString());
+            tdList = tdDAO.getRegbyStudAdmin(Session["username"].ToString());
             Label14.Text = tdList.studentAdmin.ToString();
             Label2.Text = tdList.studentName.ToString();
             Label3.Text = tdList.gender.ToString();
@@ -30,7 +30,7 @@ namespace EADP
             string nationality = "";
             StudList tdList = new StudList();
             StudListDAO tdDAO = new StudListDAO();
-            tdList = tdDAO.getRegbyStudAdmin(Session["Email"].ToString());
+            tdList = tdDAO.getRegbyStudAdmin(Session["username"].ToString());
             string adminNO = tdList.studentAdmin.ToString();
             string tripID = "Korea2018";
             if(DdlCountry.SelectedValue != "-1")
