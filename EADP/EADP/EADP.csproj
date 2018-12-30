@@ -126,6 +126,7 @@
     <Content Include="StudAcc.aspx" />
     <Content Include="StudentDetails.aspx" />
     <Content Include="Survey.aspx" />
+    <Content Include="TripManagement.aspx" />
     <Content Include="wrong.aspx" />
     <None Include="scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="scripts\jquery-2.2.4.js" />
@@ -174,6 +175,8 @@
     <Compile Include="DAL\Survey.cs" />
     <Compile Include="DAL\SurveyDAO.cs" />
     <Compile Include="DAL\toExcel.cs" />
+    <Compile Include="DAL\Trip.cs" />
+    <Compile Include="DAL\tripDAO.cs" />
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -272,6 +275,13 @@
     </Compile>
     <Compile Include="Survey.aspx.designer.cs">
       <DependentUpon>Survey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TripManagement.aspx.cs">
+      <DependentUpon>TripManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TripManagement.aspx.designer.cs">
+      <DependentUpon>TripManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="wrong.aspx.cs">
       <DependentUpon>wrong.aspx</DependentUpon>
