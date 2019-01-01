@@ -103,6 +103,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.Jcrop.css" />
     <Content Include="Content\jquery.Jcrop.min.css" />
+    <Content Include="Createsurvey.aspx" />
     <Content Include="scripts\jquery.color.js" />
     <Content Include="scripts\jquery.Jcrop.js" />
     <Content Include="scripts\jquery.Jcrop.min.js" />
@@ -165,6 +166,13 @@
     <Compile Include="Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Createsurvey.aspx.cs">
+      <DependentUpon>Createsurvey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Createsurvey.aspx.designer.cs">
+      <DependentUpon>Createsurvey.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Encryption.cs" />
     <Compile Include="DAL\StudentLogin.cs" />
     <Compile Include="DAL\StudentLoginDAO.cs" />
@@ -174,6 +182,8 @@
     <Compile Include="DAL\StudRegDAO.cs" />
     <Compile Include="DAL\Survey.cs" />
     <Compile Include="DAL\SurveyDAO.cs" />
+    <Compile Include="DAL\SurveyQ.cs" />
+    <Compile Include="DAL\SurveyQDAO.cs" />
     <Compile Include="DAL\toExcel.cs" />
     <Compile Include="DAL\Trip.cs" />
     <Compile Include="DAL\tripDAO.cs" />
