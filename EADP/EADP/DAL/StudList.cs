@@ -10,6 +10,7 @@ namespace EADP.DAL
         public string studentAdmin { get; set; }
         public string studentName { get; set; }
         public string studentPassword { get; set; }
+        public string studentImage { get; set; }
         public string gender { get; set; }
         public string diploma { get; set; }
         public DateTime DOB { get; set; }
