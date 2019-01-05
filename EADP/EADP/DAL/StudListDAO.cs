@@ -72,7 +72,7 @@ namespace EADP.DAL
             DataTable tdData = new DataTable();
             
             StringBuilder sqlStr = new StringBuilder();
-            sqlStr.AppendLine("select RegisteredStudent.StudentAdmin, Student.StudentName,Student.Gender,Student.School,Student.PEMGroup,RegisteredStudent.Nationality,RegisteredStudent.PassportNO,RegisteredStudent.PassportExpiry,RegisteredStudent.DietConstraint,RegisteredStudent.MedicalHistory,RegisteredStudent.FASscheme,RegisteredStudent.Remarks from Student");
+            sqlStr.AppendLine("select RegisteredStudent.StudentAdmin, Student.StudentName,Student.Gender,Student.School,Student.PEMGroup,Student.Nationality,RegisteredStudent.PassportNO,RegisteredStudent.PassportExpiry,Student.DietConstraint,Student.MedicalHistory,RegisteredStudent.FASscheme,RegisteredStudent.Remarks from Student");
             sqlStr.AppendLine("Inner Join RegisteredStudent");
             sqlStr.AppendLine("on Student.StudentAdmin = RegisteredStudent.StudentAdmin");
             sqlStr.AppendLine("AND RegisteredStudent.StudentAdmin = @paraCustId;");         
