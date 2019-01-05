@@ -152,7 +152,7 @@
 							Change password </a>
 						</li>
                         <li>
-							<a href="#">
+							<a href="ProfilePicture.aspx">
 							
 							Change Profile Picture</a>
 						</li>
