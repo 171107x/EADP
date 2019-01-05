@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account.aspx" />
+    <Content Include="ConfirmParticulars.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -104,6 +105,7 @@
     <Content Include="Content\jquery.Jcrop.css" />
     <Content Include="Content\jquery.Jcrop.min.css" />
     <Content Include="Createsurvey.aspx" />
+    <Content Include="ExtraStudentDetails.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="ResetPassword.aspx" />
     <Content Include="scripts\jquery.color.js" />
@@ -155,7 +157,7 @@
     </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="StudReg.aspx" />
+    <Content Include="UpdateParticulars.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -167,6 +169,13 @@
     </Compile>
     <Compile Include="Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmParticulars.aspx.cs">
+      <DependentUpon>ConfirmParticulars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmParticulars.aspx.designer.cs">
+      <DependentUpon>ConfirmParticulars.aspx</DependentUpon>
     </Compile>
     <Compile Include="Createsurvey.aspx.cs">
       <DependentUpon>Createsurvey.aspx</DependentUpon>
@@ -189,6 +198,13 @@
     <Compile Include="DAL\toExcel.cs" />
     <Compile Include="DAL\Trip.cs" />
     <Compile Include="DAL\tripDAO.cs" />
+    <Compile Include="ExtraStudentDetails.aspx.cs">
+      <DependentUpon>ExtraStudentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExtraStudentDetails.aspx.designer.cs">
+      <DependentUpon>ExtraStudentDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -288,12 +304,12 @@
     <Compile Include="StudentDetails.aspx.designer.cs">
       <DependentUpon>StudentDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="StudReg.aspx.cs">
-      <DependentUpon>StudReg.aspx</DependentUpon>
+    <Compile Include="UpdateParticulars.aspx.cs">
+      <DependentUpon>UpdateParticulars.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="StudReg.aspx.designer.cs">
-      <DependentUpon>StudReg.aspx</DependentUpon>
+    <Compile Include="UpdateParticulars.aspx.designer.cs">
+      <DependentUpon>UpdateParticulars.aspx</DependentUpon>
     </Compile>
     <Compile Include="Survey.aspx.cs">
       <DependentUpon>Survey.aspx</DependentUpon>

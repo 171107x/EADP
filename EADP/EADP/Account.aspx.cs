@@ -24,7 +24,15 @@ namespace EADP
                 StudList tdList = new StudList();
                 StudListDAO tdDAO = new StudListDAO();
                 tdList = tdDAO.getRegbyStudAdmin(Session["username"].ToString());
-            
+
+                tdName.Text = tdList.studentName.ToString();
+                Label1.Text = tdList.studentAdmin.ToString();
+                Label2.Text = tdList.pemGroup.ToString();
+                Label3.Text = tdList.nationality.ToString();
+                Label4.Text = tdList.MobileNO.ToString();
+                Label5.Text = tdList.DietConstraint.ToString();
+                Label6.Text = tdList.MedicalHistory.ToString();
+
                 string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
                 SqlConnection myConn = new SqlConnection(DBConnect);
                 SqlDataAdapter da;

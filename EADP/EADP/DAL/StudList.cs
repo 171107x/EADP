@@ -16,6 +16,7 @@ namespace EADP.DAL
         public DateTime DOB { get; set; }
         public string pemGroup { get; set; }
         public string nationality { get; set; }
+        public string MobileNO { get; set; }
         public string passportNo { get; set; }
         public DateTime passportE { get; set; }
         public string DietConstraint { get; set; }

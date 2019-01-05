@@ -38,7 +38,7 @@ namespace EADP
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             StringBuilder sqlStr = new StringBuilder();
-            sqlStr.AppendLine("select RegisteredStudent.StudentAdmin, Student.StudentName,Student.Gender,Student.School,Student.PEMGroup,RegisteredStudent.Nationality,RegisteredStudent.PassportNO,RegisteredStudent.PassportExpiry,RegisteredStudent.DietConstraint,RegisteredStudent.MedicalHistory,RegisteredStudent.FASscheme,RegisteredStudent.Remarks from Student");
+            sqlStr.AppendLine("select RegisteredStudent.StudentAdmin, Student.StudentName,Student.Gender,Student.School,Student.PEMGroup,Student.Nationality,RegisteredStudent.PassportNO,RegisteredStudent.PassportExpiry,Student.DietConstraint,Student.MedicalHistory,RegisteredStudent.FASscheme,RegisteredStudent.Remarks from Student");
             sqlStr.AppendLine("Inner Join RegisteredStudent");
             sqlStr.AppendLine("on Student.StudentAdmin = RegisteredStudent.StudentAdmin");
             SqlConnection myConn = new SqlConnection(DBConnect);

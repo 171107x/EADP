@@ -159,9 +159,13 @@ namespace EADP.DAL
                 myTD.studentName = row["StudentName"].ToString();
                 myTD.studentPassword = row["StudentPassword"].ToString();
                 myTD.gender = row["Gender"].ToString();
+                myTD.nationality = row["Nationality"].ToString();
                 myTD.diploma = row["School"].ToString();
                 myTD.DOB = Convert.ToDateTime(row["DOB"].ToString());
                 myTD.pemGroup = row["PEMGroup"].ToString();
+                myTD.MobileNO = row["MobileNO"].ToString();
+                myTD.DietConstraint = row["DietConstraint"].ToString();
+                myTD.MedicalHistory = row["MedicalHistory"].ToString();
                            
 
             }

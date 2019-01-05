@@ -142,7 +142,7 @@
                 <div class="profile-usermenu">
 					<ul class="nav">
 						<li>
-							<a href="#">
+							<a href="UpdateParticulars.aspx">
 							
 							Update Particulars </a>
 						</li>
@@ -152,7 +152,7 @@
 							Change password </a>
 						</li>
                         <li>
-							<a href="ProfilePicture.aspx">
+							<a href="ProfilePic.aspx">
 							
 							Change Profile Picture</a>
 						</li>
