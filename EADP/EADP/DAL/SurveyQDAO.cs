@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -50,5 +51,49 @@ namespace EADP.DAL
             return result;
 
         }
+        public SurveyQ getSurveyQuestions(int surveyQnsID)
+        {
+            DataSet ds = new DataSet();
+            DataTable tdData = new DataTable();
+
+            StringBuilder sqlStr = new StringBuilder();
+            sqlStr.AppendLine("select * from SurveyQns");
+            sqlStr.AppendLine("Where SurveyQID = @paraSurveyQID;");
+
+
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+
+
+
+            da.SelectCommand.Parameters.AddWithValue("paraSurveyQID", surveyQnsID);
+
+
+            da.Fill(ds, "TableTD");
+
+
+
+            int rec_cnt = ds.Tables["TableTD"].Rows.Count;
+
+            SurveyQ myTD = new SurveyQ();
+            if (rec_cnt > 0)
+            {
+
+
+
+                DataRow row = ds.Tables["TableTD"].Rows[0];
+                myTD.q1 = row["Q1"].ToString();
+                myTD.q2 = row["Q2"].ToString();
+                myTD.q3 = row["Q3"].ToString();
+                myTD.q4 = row["Q4"].ToString();
+            }
+            else
+            {
+                myTD = null;
+            }
+
+            return myTD;
+        }
     }
-}
+    }

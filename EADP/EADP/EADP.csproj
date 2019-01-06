@@ -131,6 +131,7 @@
     <Content Include="StudAcc.aspx" />
     <Content Include="StudentDetails.aspx" />
     <Content Include="Survey.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="TripManagement.aspx" />
     <Content Include="wrong.aspx" />
     <None Include="scripts\jquery-2.2.4.intellisense.js" />
@@ -303,6 +304,13 @@
     </Compile>
     <Compile Include="StudentDetails.aspx.designer.cs">
       <DependentUpon>StudentDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateParticulars.aspx.cs">
       <DependentUpon>UpdateParticulars.aspx</DependentUpon>
