@@ -43,7 +43,7 @@
             <div id="form-group">
                 <div class="row">
                     <div class="col-md-8"> 
-                        <asp:TextBox ID="tbpassword" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="tbpassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
@@ -52,7 +52,7 @@
             <div id="form-group">
                 <div class="row">
                     <div class="col-md-8"> 
-                        <asp:TextBox ID="tbconfirm" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="tbconfirm" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
