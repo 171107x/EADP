@@ -15,7 +15,7 @@
         <asp:Button ID="studsearchbtn" runat="server" Text="Search" OnClick="studsearchbtn_Click"/>
         <br />
         <br />
-        <asp:GridView runat="server" ID="GridViewTD" CssClass="table table-striped" AutoGenerateColumns="False" OnSelectedIndexChanged="GridViewTD_SelectedIndexChanged">
+        <asp:GridView runat="server" ID="GridViewTD" CssClass="table" AutoGenerateColumns="False" OnSelectedIndexChanged="GridViewTD_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="StudentAdmin" HeaderText="Student Admin" />
             <asp:BoundField DataField="StudentName" HeaderText="Student Name" />
@@ -23,6 +23,7 @@
             <asp:BoundField DataField="school" HeaderText="Diploma" />
             <asp:BoundField DataField="PEMGroup" HeaderText="PEM Group" />
             <asp:CommandField SelectText="More Details" ShowSelectButton="True" />
+            <asp:ButtonField ButtonType="Button" CommandName="Update" Text="Accept" />
         </Columns>
         </asp:GridView>
         <asp:Button ID="Button1" runat="server" Text="Download to Excel" Width="154px" OnClick="Button1_Click" />
