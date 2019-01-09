@@ -28,7 +28,7 @@ namespace EADP
                     Label2.Text = tdList.studentName.ToString();
                     Label3.Text = tdList.gender.ToString();
                     Label4.Text = tdList.DOB.ToString("dd/MM/yyyy");
-                    LblDiploma.Text = tdList.diploma.ToString();
+                    LblDiploma.Text = tdList.school.ToString();
                     Label5.Text = tdList.pemGroup.ToString();
                     tdCountry.Text = tdList.nationality.ToString();
                     tdMobileNo.Text = tdList.MobileNO.ToString();

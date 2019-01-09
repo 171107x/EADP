@@ -2,13 +2,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
+    <br />
+    <br />
+
     <div class="container">
         <div class="container" style="text-align:center;">
         <asp:Label runat="server" style="" ID="ProgCode"></asp:Label> 
             </div>
         <asp:Label ID="studsearchLb" runat="server" Text="Enter Student Admin Number" Font-Size="Small"></asp:Label>
         <asp:TextBox ID="tbstudsearch" runat="server"></asp:TextBox>
-            <asp:Button ID="studsearchbtn" runat="server" Text="Search" OnClick="studsearchbtn_Click"/>
+        <asp:Button ID="studsearchbtn" runat="server" Text="Search" OnClick="studsearchbtn_Click"/>
+        <br />
+        <br />
         <asp:GridView runat="server" ID="GridViewTD" CssClass="table table-striped" AutoGenerateColumns="False" OnSelectedIndexChanged="GridViewTD_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="StudentAdmin" HeaderText="Student Admin" />

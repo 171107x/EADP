@@ -71,5 +71,36 @@ namespace EADP
             Response.End();
         }
 
+        protected void studsearchbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {                
+                string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+                SqlConnection myConn = new SqlConnection(DBConnect);
+
+                SqlDataAdapter da;
+                DataSet ds = new DataSet();
+                //Create Adapter
+                StringBuilder sqlCommand = new StringBuilder();
+
+                sqlCommand.AppendLine("select * from [Student] where StudentAdmin = @StudentAdmin");
+
+                da = new SqlDataAdapter(sqlCommand.ToString(), myConn);
+                da.SelectCommand.Parameters.AddWithValue("StudentAdmin", tbstudsearch.Text);
+
+                da.Fill(ds);
+                int rec_cnt = ds.Tables[0].Rows.Count;
+                if (rec_cnt > 0)
+                {
+                    GridViewTD.DataSource = ds;
+                    GridViewTD.DataBind();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
     }
 }
