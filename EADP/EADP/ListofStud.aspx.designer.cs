@@ -22,6 +22,33 @@ namespace EADP {
         protected global::System.Web.UI.WebControls.Label ProgCode;
         
         /// <summary>
+        /// studsearchLb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label studsearchLb;
+        
+        /// <summary>
+        /// tbstudsearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbstudsearch;
+        
+        /// <summary>
+        /// studsearchbtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button studsearchbtn;
+        
+        /// <summary>
         /// GridViewTD control.
         /// </summary>
         /// <remarks>
