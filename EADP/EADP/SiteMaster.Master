@@ -13,12 +13,18 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title></title>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css'>
+    <%--<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css'>--%>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 80px;
+            height: 73px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -27,14 +33,14 @@
  <!-- Navigation menu-->
  <nav class="navbar nav-tabs navbar-inverse navbar-fixed-top" style="left: 0; right: 0; top: 0; height: 50px">
                 <div class="container-fluid">
-                    <div class="navbar-header">
+                    <div style="margin-top:-10px;" class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>                                     
-                        <a class="navbar-brand" href="Home.aspx"><span></span>Trip Management System</a>
+                        <img class="auto-style1" src="ProfilePic/nyp.png" /><a style="float:none;" class="navbar-brand" href="Home.aspx"><span></span>Trip Management System</a>
                          
                         
                     </div>

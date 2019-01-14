@@ -142,7 +142,7 @@
                 <div class="profile-usermenu">
 					<ul class="nav">
 						<li>
-							<a href="#">
+							<a href="UpdateParticulars.aspx">
 							
 							Update Particulars </a>
 						</li>
@@ -152,7 +152,7 @@
 							Change password </a>
 						</li>
                         <li>
-							<a href="#">
+							<a href="ProfilePic.aspx">
 							
 							Change Profile Picture</a>
 						</li>
@@ -161,10 +161,9 @@
             </div>
             </div>
                 <div class="col-md-9">
-                <img src="ProfilePic/download1.jpg" width="150" height="150" class="center profile-pic">
-                
-                     <i style="text-align:center;" class="fa fa-camera upload-button"></i>         
-                     <asp:FileUpload ID="FileUpload1" type="file" class="file-upload" runat="server" accept="image/*"/>  
+                <asp:Image runat="server" Height="150" Width="150" CssClass="center profile-pic" ID="idProfile"></asp:Image>
+                          
+                      
                 
             <br />
             <table style="border:0px;background-color:white;">
@@ -231,29 +230,5 @@
             
 
         <script>
-$(document).ready(function() {
-
-    
-    var readURL = function(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('.profile-pic').attr('src', e.target.result);
-            }
-    
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    
-
-    $(".file-upload").on('change', function(){
-        readURL(this);
-    });
-    
-    $(".upload-button").on('click', function() {
-       $(".file-upload").click();
-    });
-});
 </script>
 </asp:Content>
