@@ -97,12 +97,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account.aspx" />
+    <Content Include="ConfirmParticulars.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.Jcrop.css" />
     <Content Include="Content\jquery.Jcrop.min.css" />
+    <Content Include="Createsurvey.aspx" />
+    <Content Include="ExtraStudentDetails.aspx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="ResetPassword.aspx" />
     <Content Include="EditTrip.aspx" />
     <Content Include="Images\france.jpg" />
     <Content Include="scripts\jquery.color.js" />
@@ -128,6 +133,7 @@
     <Content Include="StudAcc.aspx" />
     <Content Include="StudentDetails.aspx" />
     <Content Include="Survey.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="TripManagement.aspx" />
     <Content Include="TripStudentView.aspx" />
     <Content Include="UpdateTrip.aspx" />
@@ -156,7 +162,7 @@
     </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="StudReg.aspx" />
+    <Content Include="UpdateParticulars.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -169,6 +175,20 @@
     <Compile Include="Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmParticulars.aspx.cs">
+      <DependentUpon>ConfirmParticulars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmParticulars.aspx.designer.cs">
+      <DependentUpon>ConfirmParticulars.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Createsurvey.aspx.cs">
+      <DependentUpon>Createsurvey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Createsurvey.aspx.designer.cs">
+      <DependentUpon>Createsurvey.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Encryption.cs" />
     <Compile Include="DAL\StudentLogin.cs" />
     <Compile Include="DAL\StudentLoginDAO.cs" />
@@ -178,9 +198,17 @@
     <Compile Include="DAL\StudRegDAO.cs" />
     <Compile Include="DAL\Survey.cs" />
     <Compile Include="DAL\SurveyDAO.cs" />
+    <Compile Include="DAL\SurveyQ.cs" />
+    <Compile Include="DAL\SurveyQDAO.cs" />
     <Compile Include="DAL\toExcel.cs" />
     <Compile Include="DAL\Trip.cs" />
     <Compile Include="DAL\tripDAO.cs" />
+    <Compile Include="ExtraStudentDetails.aspx.cs">
+      <DependentUpon>ExtraStudentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExtraStudentDetails.aspx.designer.cs">
+      <DependentUpon>ExtraStudentDetails.aspx</DependentUpon>
     <Compile Include="EditTrip.aspx.cs">
       <DependentUpon>EditTrip.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -194,6 +222,13 @@
     </Compile>
     <Compile Include="FAQ.aspx.designer.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -238,6 +273,13 @@
       <DependentUpon>ProfilePic.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SiteMaster.Master.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -273,12 +315,19 @@
     <Compile Include="StudentDetails.aspx.designer.cs">
       <DependentUpon>StudentDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="StudReg.aspx.cs">
-      <DependentUpon>StudReg.aspx</DependentUpon>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="StudReg.aspx.designer.cs">
-      <DependentUpon>StudReg.aspx</DependentUpon>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateParticulars.aspx.cs">
+      <DependentUpon>UpdateParticulars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateParticulars.aspx.designer.cs">
+      <DependentUpon>UpdateParticulars.aspx</DependentUpon>
     </Compile>
     <Compile Include="Survey.aspx.cs">
       <DependentUpon>Survey.aspx</DependentUpon>
@@ -354,7 +403,7 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

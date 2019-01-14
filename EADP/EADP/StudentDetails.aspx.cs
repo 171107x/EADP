@@ -21,7 +21,7 @@ namespace EADP
                 LblAdmin.Text = tdList.studentAdmin.ToString();
                 LblStudname.Text = tdList.studentName.ToString();
                 LblGender.Text = tdList.gender.ToString();
-                LblSchool.Text = tdList.diploma.ToString();
+                LblSchool.Text = tdList.school.ToString();
                 LblPEMGroup.Text = tdList.pemGroup.ToString();
                 LblNationality.Text = tdList.nationality.ToString();
                 Label3.Text = tdList.passportNo.ToString();
