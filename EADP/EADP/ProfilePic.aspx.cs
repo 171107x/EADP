@@ -64,7 +64,7 @@ namespace EADP
             string filePath = Path.Combine(Server.MapPath("~/ProfilePic"), fileName);
             string cropFileName = "";
             string cropFilePath = "";
-            
+            lblMsg.Text = fileName;
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
@@ -127,33 +127,30 @@ namespace EADP
 
                         myConn.Close();
 
-                        Response.Redirect("Account.aspx");
                     }
                     else
                     {
 
                         StringBuilder sqlStr = new StringBuilder();
-                        int result = 0;
-                        SqlCommand sqlCmd = new SqlCommand();
+                    int result = 0;
+                    SqlCommand sqlCmd = new SqlCommand();
 
-                        sqlStr.AppendLine("INSERT INTO ProfilePic (StudentAdmin, Image)");
-                        sqlStr.AppendLine("VALUES (@paraStudAdmin,@paraImage)");
+                    sqlStr.AppendLine("INSERT INTO ProfilePic (StudentAdmin, Image)");
+                    sqlStr.AppendLine("VALUES (@paraStudAdmin,@paraImage)");
 
-                        sqlCmd = new SqlCommand(sqlStr.ToString(), myConn);
+                    sqlCmd = new SqlCommand(sqlStr.ToString(), myConn);
 
-                        string Imagepath = "crop_" + fileName.ToString();
-                        string Image = "~/ProfilePic/" + Imagepath;
+                    string Imagepath = "crop_" + fileName.ToString();
+                    string Image = "~/ProfilePic/" + Imagepath;
 
-                        sqlCmd.Parameters.AddWithValue("@paraStudAdmin", tdList.studentAdmin.ToString());
-                        sqlCmd.Parameters.AddWithValue("@paraImage", Image);
+                    sqlCmd.Parameters.AddWithValue("@paraStudAdmin", tdList.studentAdmin.ToString());
+                    sqlCmd.Parameters.AddWithValue("@paraImage", Image);
 
-                        myConn.Open();
-                        result = sqlCmd.ExecuteNonQuery();
+                    myConn.Open();
+                    result = sqlCmd.ExecuteNonQuery();
 
-                        myConn.Close();
-
-                        Response.Redirect("Account.aspx");
-                    }
+                    myConn.Close();
+                }
 
 
                 }
