@@ -15,9 +15,6 @@ namespace EADP.DAL
         public string Description { get; set; }
         public double ETripPrice { get; set; }
         public int MaxStudent { get; set; }
-        public int StaffID { get; set; }
-        public string StaffName { get; set; }
-        public string Image { get; set; }
 
     }
 }

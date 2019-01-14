@@ -104,12 +104,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.Jcrop.css" />
     <Content Include="Content\jquery.Jcrop.min.css" />
+<<<<<<< HEAD
     <Content Include="Createsurvey.aspx" />
     <Content Include="ExtraStudentDetails.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="ResetPassword.aspx" />
     <Content Include="EditTrip.aspx" />
     <Content Include="Images\france.jpg" />
+=======
+>>>>>>> parent of 347fbc7... Add trip, update and delete function completed.
     <Content Include="scripts\jquery.color.js" />
     <Content Include="scripts\jquery.Jcrop.js" />
     <Content Include="scripts\jquery.Jcrop.min.js" />
@@ -135,8 +138,6 @@
     <Content Include="Survey.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="TripManagement.aspx" />
-    <Content Include="TripStudentView.aspx" />
-    <Content Include="UpdateTrip.aspx" />
     <Content Include="wrong.aspx" />
     <None Include="scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="scripts\jquery-2.2.4.js" />
@@ -203,6 +204,7 @@
     <Compile Include="DAL\toExcel.cs" />
     <Compile Include="DAL\Trip.cs" />
     <Compile Include="DAL\tripDAO.cs" />
+<<<<<<< HEAD
     <Compile Include="ExtraStudentDetails.aspx.cs">
       <DependentUpon>ExtraStudentDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -216,6 +218,8 @@
     <Compile Include="EditTrip.aspx.designer.cs">
       <DependentUpon>EditTrip.aspx</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of 347fbc7... Add trip, update and delete function completed.
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -343,20 +347,6 @@
     <Compile Include="TripManagement.aspx.designer.cs">
       <DependentUpon>TripManagement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TripStudentView.aspx.cs">
-      <DependentUpon>TripStudentView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TripStudentView.aspx.designer.cs">
-      <DependentUpon>TripStudentView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateTrip.aspx.cs">
-      <DependentUpon>UpdateTrip.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UpdateTrip.aspx.designer.cs">
-      <DependentUpon>UpdateTrip.aspx</DependentUpon>
-    </Compile>
     <Compile Include="wrong.aspx.cs">
       <DependentUpon>wrong.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -369,7 +359,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="tripImg\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
