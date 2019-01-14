@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-         <div class="form-group">
+         <div class="form-group" style="margin-top:50px;">
             <asp:Label ID="LblAdmin" runat="server" Text="Admin No"></asp:Label>       
             <asp:TextBox ID="tbAdmin" runat="server" CssClass="form-control" Width="194px"></asp:TextBox>
         </div>

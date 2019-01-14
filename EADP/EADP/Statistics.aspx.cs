@@ -46,7 +46,7 @@ namespace EADP
         protected void GetWeatherInfo(object sender, EventArgs e)
         {
             string appId = "233ea45064c2ad346eb05db29cff9e64";
-            string url = string.Format("http://api.openweathermap.org/data/2.5/forecast?appid={1}&q={0}&units=metric", TxtCity.Text.Trim(), appId);
+            string url = string.Format("http://api.openweathermap.org/data/2.5/forecast?appid={1}&q={0}&units=metric&cnt=1", TxtCity.Text.Trim(), appId);
             using (WebClient client = new WebClient())
             {
                 string json = client.DownloadString(url);
@@ -56,33 +56,38 @@ namespace EADP
                 imgCountryflag.ImageUrl = string.Format("http://openweathermap.org/images/flags/{0}.png", weatherInfo.city.country.ToLower());
                 lblDescription.Text = weatherInfo.list[0].weather[0].description;
                 imgWeathericon.ImageUrl = string.Format("http://openweathermap.org/img/w/{0}.png", weatherInfo.list[0].weather[0].icon);
-                lblTempmin.Text =  weatherInfo.list[0].temp.min.ToString();
-                //lblTempmax.Text = string.Format("{0}°С", Math.Round(weatherInfo.list[0].temp.max, 1));
-                //lblTempday.Text = string.Format("{0}°С", Math.Round(weatherInfo.list[0].temp.day, 1));
-                //lblTempnight.Text = string.Format("{0}°С", Math.Round(weatherInfo.list[0].temp.night, 1));
-                lblHumidity.Text = weatherInfo.list[0].humidity.ToString();
+                lblTempMin.Text = string.Format("{0}°С", Math.Round(weatherInfo.list[0].main.temp_min, 1));
+                lblTempMax.Text = string.Format("{0}°С", Math.Round(weatherInfo.list[0].main.temp_max, 1));
+                lblTemperature.Text = string.Format("{0}°С", Math.Round(weatherInfo.list[0].main.temp, 1));
+                lblHumidity.Text = weatherInfo.list[0].main.humidity.ToString();
                 tblWeather.Visible = true;
 
+            }
+            if (IsPostBack)
+            {
+                GetStudentChartInfo();
             }
         }
         public class WeatherInfo
         {
             public City city { get; set; }
             public List<List> list { get; set; }
+
         }
 
         public class City
         {
             public string name { get; set; }
             public string country { get; set; }
+
         }
 
-        public class Temp
+        public class Main
         {
-            public double day { get; set; }
-            public double min { get; set; }
-            public double max { get; set; }
-            public double night { get; set; }
+            public double temp { get; set; }
+            public double temp_min { get; set; }
+            public double temp_max { get; set; }
+            public int humidity { get; set; }
         }
 
         public class Weather
@@ -93,7 +98,7 @@ namespace EADP
 
         public class List
         {
-            public Temp temp { get; set; }
+            public Main main { get; set; }
             public int humidity { get; set; }
             public List<Weather> weather { get; set; }
         }
