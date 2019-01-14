@@ -196,3 +196,36 @@ C:\Users\Ho Joey\Documents\GitHub\EADP\EADP\EADP\bin\Microsoft.CodeDom.Providers
 C:\Users\Ho Joey\Documents\GitHub\EADP\EADP\EADP\obj\Debug\EADP.csprojResolveAssemblyReference.cache
 C:\Users\Ho Joey\Documents\GitHub\EADP\EADP\EADP\obj\Debug\EADP.dll
 C:\Users\Ho Joey\Documents\GitHub\EADP\EADP\EADP\obj\Debug\EADP.pdb
+D:\EADP_wtf\EADP\EADP\bin\ApplicationInsights.config
+D:\EADP_wtf\EADP\EADP\bin\roslyn\csc.exe
+D:\EADP_wtf\EADP\EADP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\EADP_wtf\EADP\EADP\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\EADP_wtf\EADP\EADP\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\EADP_wtf\EADP\EADP\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\EADP_wtf\EADP\EADP\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\EADP_wtf\EADP\EADP\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\EADP_wtf\EADP\EADP\bin\roslyn\System.Collections.Immutable.dll
+D:\EADP_wtf\EADP\EADP\bin\roslyn\System.Reflection.Metadata.dll
+D:\EADP_wtf\EADP\EADP\bin\roslyn\vbc.exe
+D:\EADP_wtf\EADP\EADP\bin\roslyn\VBCSCompiler.exe
+D:\EADP_wtf\EADP\EADP\bin\roslyn\VBCSCompiler.exe.config
+D:\EADP_wtf\EADP\EADP\bin\EADP.dll.config
+D:\EADP_wtf\EADP\EADP\bin\EADP.dll
+D:\EADP_wtf\EADP\EADP\bin\EADP.pdb
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.AI.Agent.Intercept.dll
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.AI.DependencyCollector.dll
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.AI.Web.dll
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.AI.WindowsServer.dll
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.ApplicationInsights.dll
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.AI.DependencyCollector.xml
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.AI.Web.xml
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.AI.WindowsServer.xml
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.ApplicationInsights.xml
+D:\EADP_wtf\EADP\EADP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\EADP_wtf\EADP\EADP\obj\Debug\EADP.csprojResolveAssemblyReference.cache
+D:\EADP_wtf\EADP\EADP\obj\Debug\EADP.dll
+D:\EADP_wtf\EADP\EADP\obj\Debug\EADP.pdb

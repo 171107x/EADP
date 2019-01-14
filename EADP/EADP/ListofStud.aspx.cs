@@ -17,20 +17,126 @@ namespace EADP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["Code"] = "Korea2018";
+            if (!Page.IsPostBack)
+            {
+                Session["Code"] = "Korea2018";
+                StudListDAO tdDAO = new StudListDAO();
+                List<StudList> tdList = new List<StudList>();
+                tdList = tdDAO.getTDbyTripID(Session["Code"].ToString());
+                GridViewTD.DataSource = tdList;
+                GridViewTD.DataBind();
+                ProgCode.Text = "<h1>" + Session["Code"].ToString() + "</h1>";
+            }
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+
+            DataSet ds = new DataSet();
+            DataTable tdData = new DataTable();
+
+            StringBuilder sqlStr = new StringBuilder();
+            sqlStr.AppendLine("select count(*) from RegisteredStudent");
+            sqlStr.AppendLine("where TripID = @paraTripID AND TripStatus = 'Accepted';");
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+
+            da.SelectCommand.Parameters.AddWithValue("paraTripID", Session["Code"].ToString());
+
+            da.Fill(ds, "TableTD");
+
+            int rec_cnt = ds.Tables["TableTD"].Rows.Count;
+
+            if (rec_cnt > 0)
+            {
+                DataRow row = ds.Tables["TableTD"].Rows[0];
+                lbStudent.Text = row[0].ToString();
+
+            }
+            else
+            {
+                // do nothing
+            }
+
+        }
+        protected void gvbind()
+        {
             StudListDAO tdDAO = new StudListDAO();
             List<StudList> tdList = new List<StudList>();
             tdList = tdDAO.getTDbyTripID(Session["Code"].ToString());
             GridViewTD.DataSource = tdList;
             GridViewTD.DataBind();
-            ProgCode.Text = "<h1>" + Session["Code"].ToString() + "</h1>";
-            
         }
 
+        protected void GridViewTD_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Accept")
+            {
+
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+
+                GridViewRow row = GridViewTD.Rows[rowIndex];
+
+                string studAdmin = row.Cells[1].Text;
+                string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+                StringBuilder sqlStr = new StringBuilder();
+                int result = 0;
+                SqlCommand sqlCmd = new SqlCommand();
+
+                sqlStr.AppendLine("UPDATE RegisteredStudent set TripStatus = @paraStatus ");
+                sqlStr.AppendLine("WHERE StudentAdmin = @paraStudentAdmin");
+
+                SqlConnection myConn = new SqlConnection(DBConnect);
+
+                sqlCmd = new SqlCommand(sqlStr.ToString(), myConn);
+                sqlCmd.Parameters.AddWithValue("@paraStatus", "Accepted");
+                sqlCmd.Parameters.AddWithValue("@paraStudentAdmin", studAdmin.ToString());
+
+                myConn.Open();
+                result = sqlCmd.ExecuteNonQuery();
+
+                myConn.Close();
+                StudListDAO tdDAO = new StudListDAO();
+                List<StudList> tdList = new List<StudList>();
+                tdList = tdDAO.getTDbyTripID(Session["Code"].ToString());
+                GridViewTD.DataSource = tdList;
+                GridViewTD.DataBind();
+            }
+            if (e.CommandName == "Reject")
+            {
+
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+
+                GridViewRow row = GridViewTD.Rows[rowIndex];
+
+                string studAdmin = row.Cells[1].Text;
+                string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+                StringBuilder sqlStr = new StringBuilder();
+                int result = 0;
+                SqlCommand sqlCmd = new SqlCommand();
+
+                sqlStr.AppendLine("UPDATE RegisteredStudent set TripStatus = @paraStatus ");
+                sqlStr.AppendLine("WHERE StudentAdmin = @paraStudentAdmin");
+
+                SqlConnection myConn = new SqlConnection(DBConnect);
+
+                sqlCmd = new SqlCommand(sqlStr.ToString(), myConn);
+                sqlCmd.Parameters.AddWithValue("@paraStatus", "Rejected");
+                sqlCmd.Parameters.AddWithValue("@paraStudentAdmin", studAdmin.ToString());
+
+                myConn.Open();
+                result = sqlCmd.ExecuteNonQuery();
+
+                myConn.Close();
+                StudListDAO tdDAO = new StudListDAO();
+                List<StudList> tdList = new List<StudList>();
+                tdList = tdDAO.getTDbyTripID(Session["Code"].ToString());
+                GridViewTD.DataSource = tdList;
+                GridViewTD.DataBind();
+            }
+        }
         protected void GridViewTD_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridViewRow row = GridViewTD.SelectedRow;           
-            Session["studInfo"] = row.Cells[0].Text;
+            GridViewRow row = GridViewTD.SelectedRow;
+            Session["studInfo"] = row.Cells[1].Text;
             Response.Redirect("StudentDetails.aspx");
         }
 

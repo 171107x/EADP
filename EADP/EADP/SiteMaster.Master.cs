@@ -22,7 +22,7 @@ namespace EADP
         }
         protected void Logout_OnClick(object sender, EventArgs e)
         {
-            Session.Clear();
+            Session["username"] = null;
             Response.Redirect("LoginStudent.aspx");
         }
     }

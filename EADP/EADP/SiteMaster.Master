@@ -64,7 +64,7 @@
                                 <li><a href="#">Trip Status</a></li>
                                 <li><a href="Status.aspx">Status</a></li>
                               <li><a href="#">Setting</a></li>    
-                                <li><asp:LinkButton runat="server" ID="Logout" OnClientClick="Logout_OnClick">Logout</asp:LinkButton></li>                  
+                                <li><asp:LinkButton runat="server" ID="Logout" OnClick="Logout_OnClick">Logout</asp:LinkButton></li>                  
                             </ul>
                           </li>
                         </ul>

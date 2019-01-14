@@ -46,10 +46,19 @@
             </asp:RadioButtonList>
         </div>
          <div style="text-align:center;" draggable="auto">
-            <asp:Button ID="submitBtn" runat="server" Text="Submit" CssClass="btn" />
+            <asp:Button ID="submitBtn" runat="server" Text="Submit" CssClass="btn" OnClick="submitBtn_Click" />
             <asp:Button ID="resetBtn" runat="server" Text="Reset" CssClass="btn" />
             </div>
+        <div class="form-group">
+            <asp:Label ID="Label1" runat="server" Text="Enter your Email"></asp:Label>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+
         </div>
+        <asp:Label ID="status" runat="server" ></asp:Label>
+        </div>
+        
+
+        
         
 
         </asp:Content>
