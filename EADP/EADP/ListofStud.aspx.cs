@@ -38,7 +38,7 @@ namespace EADP
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             StringBuilder sqlStr = new StringBuilder();
-            sqlStr.AppendLine("select RegisteredStudent.StudentAdmin, Student.StudentName,Student.Gender,Student.School,Student.PEMGroup,Student.Nationality,RegisteredStudent.PassportNO,RegisteredStudent.PassportExpiry,Student.DietConstraint,Student.MedicalHistory,RegisteredStudent.FASscheme,RegisteredStudent.Remarks from Student");
+            sqlStr.AppendLine("select RegisteredStudent.StudentAdmin, Student.StudentName,Student.Gender,Student.School,Student.PEMGroup,RegisteredStudent.Nationality,RegisteredStudent.PassportNO,RegisteredStudent.PassportExpiry,RegisteredStudent.DietConstraint,RegisteredStudent.MedicalHistory,RegisteredStudent.FASscheme,RegisteredStudent.Remarks from Student");
             sqlStr.AppendLine("Inner Join RegisteredStudent");
             sqlStr.AppendLine("on Student.StudentAdmin = RegisteredStudent.StudentAdmin");
             SqlConnection myConn = new SqlConnection(DBConnect);
@@ -71,36 +71,5 @@ namespace EADP
             Response.End();
         }
 
-        protected void studsearchbtn_Click(object sender, EventArgs e)
-        {
-            try
-            {                
-                string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
-                SqlConnection myConn = new SqlConnection(DBConnect);
-
-                SqlDataAdapter da;
-                DataSet ds = new DataSet();
-                //Create Adapter
-                StringBuilder sqlCommand = new StringBuilder();
-
-                sqlCommand.AppendLine("select * from [Student] where StudentAdmin = @StudentAdmin");
-
-                da = new SqlDataAdapter(sqlCommand.ToString(), myConn);
-                da.SelectCommand.Parameters.AddWithValue("StudentAdmin", tbstudsearch.Text);
-
-                da.Fill(ds);
-                int rec_cnt = ds.Tables[0].Rows.Count;
-                if (rec_cnt > 0)
-                {
-                    GridViewTD.DataSource = ds;
-                    GridViewTD.DataBind();
-
-                }
-            }
-            catch (Exception ex)
-            {
-                Response.Write(ex.Message);
-            }
-        }
     }
 }

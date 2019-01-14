@@ -34,43 +34,6 @@ namespace EADP
             }
         }
 
-        protected void BtnConfirm_Click(object sender, EventArgs e)
-        {
-            string TripID = Convert.ToString(tbTripID.Text.ToString());
-            DateTime StartDate = Convert.ToDateTime(tbStartDate.Text.ToString());
-            DateTime EndDate = Convert.ToDateTime(tbEndDate.Text.ToString());
-            string Country = tbCountry.Text.ToString();
-            double ETripPrice = Convert.ToDouble(tbETripPrice.Text.ToString());
-
-
-            tripDAO newTrip = new tripDAO();
-            //newTrip.InsertTrip(TripID, StartDate, EndDate, Country, ETripPrice);
-            Response.Redirect("TripManagement.aspx");
-        }
-
-        protected void BtnUpdate_Click(object sender, EventArgs e)
-        {
-            string TripID = Convert.ToString(tbTripID.Text.ToString());
-            DateTime StartDate = Convert.ToDateTime(tbStartDate.Text.ToString());
-            DateTime EndDate = Convert.ToDateTime(tbEndDate.Text.ToString());
-            string Country = tbCountry.Text.ToString();
-            double ETripPrice = Convert.ToDouble(tbETripPrice.Text.ToString());
-
-
-            tripDAO editTrip = new tripDAO();
-            //editTrip.UpdateTrip(TripID, StartDate, EndDate, Country, ETripPrice);
-            Response.Redirect("TripManagement.aspx");
-        }
-
-        protected void BtnDelete_Click(object sender, EventArgs e)
-        {
-            string TripID = Convert.ToString(tbTripID1.Text.ToString());
-            
-            tripDAO deleteTrip = new tripDAO();
-            deleteTrip.DeleteTrip(TripID);
-            Response.Redirect("TripManagement.aspx");
-        }
-
         protected void BtnRedirect_Click(object sender, EventArgs e)
         {
             Response.Redirect("StudReg.aspx");
