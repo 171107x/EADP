@@ -16,7 +16,7 @@ namespace EADP.DAL
             StringBuilder sqlStr = new StringBuilder();
             int result = 0;    // Execute NonQuery return an integer value
             SqlCommand sqlCmd = new SqlCommand();
-            // Step1 : Create SQL insert command to add record to TDMaster using     
+            // Step1 : Create SQL insert command to add record to Survey Table using     
 
             //         parameterised query in values clause
             //

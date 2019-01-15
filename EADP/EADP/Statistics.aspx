@@ -5,6 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
+        
          <div class="form-group">
              <asp:Label ID="LblPercent" runat="server" Text="Survey results for Students preference in trip location  "></asp:Label>
              <asp:Chart ID="Chart1" runat="server" >
@@ -59,6 +60,8 @@
             </td>
         </tr>
     </table>
-        
+        <div class="form-group">
+             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            </div>
              </div>
 </asp:Content>

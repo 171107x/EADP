@@ -18,6 +18,22 @@ namespace EADP
                 GetStudentChartInfo();
             }
         }
+        private void checkFeedback()
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            using (SqlConnection myConn = new SqlConnection(DBConnect))
+            {
+                myConn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT *  FROM Feedback GROUP BY StudentAdmin WHERE StudentAdmin = 171107x", myConn);
+                int UserExist = (int)cmd.ExecuteScalar();
+                if(UserExist >0)
+                {
+                    Label1.Text = "You currently have a feedback form that is uncompleted!";
+                }
+                myConn.Close();
+            }
+
+        }
         private void GetStudentChartInfo()
         {
             DataTable dt = new DataTable();

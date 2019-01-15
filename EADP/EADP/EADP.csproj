@@ -107,6 +107,7 @@
     <Content Include="Createsurvey.aspx" />
     <Content Include="EditTrip.aspx" />
     <Content Include="ExtraStudentDetails.aspx" />
+    <Content Include="Feedback.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="ResetPassword.aspx" />
     <Content Include="scripts\jquery.color.js" />
@@ -189,6 +190,8 @@
       <DependentUpon>Createsurvey.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\Encryption.cs" />
+    <Compile Include="DAL\Feedback.cs" />
+    <Compile Include="DAL\FeedbackDAO.cs" />
     <Compile Include="DAL\StudentLogin.cs" />
     <Compile Include="DAL\StudentLoginDAO.cs" />
     <Compile Include="DAL\StudList.cs" />
@@ -222,6 +225,13 @@
     </Compile>
     <Compile Include="FAQ.aspx.designer.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
