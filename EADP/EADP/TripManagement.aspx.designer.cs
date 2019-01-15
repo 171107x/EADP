@@ -13,22 +13,13 @@ namespace EADP {
     public partial class TripManament {
         
         /// <summary>
-        /// Lbl_title control.
+        /// lblMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_title;
-        
-        /// <summary>
-        /// Lbl_description control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_description;
+        protected global::System.Web.UI.WebControls.Label lblMsg;
         
         /// <summary>
         /// GridViewTrip control.
@@ -40,57 +31,21 @@ namespace EADP {
         protected global::System.Web.UI.WebControls.GridView GridViewTrip;
         
         /// <summary>
-        /// tbTripID control.
+        /// btnClr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbTripID;
+        protected global::System.Web.UI.WebControls.Button btnClr;
         
         /// <summary>
-        /// tbStartDate control.
+        /// GridViewHist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbStartDate;
-        
-        /// <summary>
-        /// tbEndDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbEndDate;
-        
-        /// <summary>
-        /// tbCountry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbCountry;
-        
-        /// <summary>
-        /// tbETripPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbETripPrice;
-        
-        /// <summary>
-        /// BtnConfirm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnConfirm;
+        protected global::System.Web.UI.WebControls.GridView GridViewHist;
     }
 }

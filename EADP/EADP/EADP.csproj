@@ -105,6 +105,7 @@
     <Content Include="Content\jquery.Jcrop.css" />
     <Content Include="Content\jquery.Jcrop.min.css" />
     <Content Include="Createsurvey.aspx" />
+    <Content Include="EditTrip.aspx" />
     <Content Include="ExtraStudentDetails.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="ResetPassword.aspx" />
@@ -133,6 +134,8 @@
     <Content Include="Survey.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="TripManagement.aspx" />
+    <Content Include="TripStudentView.aspx" />
+    <Content Include="UpdateTrip.aspx" />
     <Content Include="wrong.aspx" />
     <None Include="scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="scripts\jquery-2.2.4.js" />
@@ -199,6 +202,13 @@
     <Compile Include="DAL\toExcel.cs" />
     <Compile Include="DAL\Trip.cs" />
     <Compile Include="DAL\tripDAO.cs" />
+    <Compile Include="EditTrip.aspx.cs">
+      <DependentUpon>EditTrip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditTrip.aspx.designer.cs">
+      <DependentUpon>EditTrip.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ExtraStudentDetails.aspx.cs">
       <DependentUpon>ExtraStudentDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -312,6 +322,13 @@
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TripStudentView.aspx.cs">
+      <DependentUpon>TripStudentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TripStudentView.aspx.designer.cs">
+      <DependentUpon>TripStudentView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateParticulars.aspx.cs">
       <DependentUpon>UpdateParticulars.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -332,6 +349,13 @@
     </Compile>
     <Compile Include="TripManagement.aspx.designer.cs">
       <DependentUpon>TripManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTrip.aspx.cs">
+      <DependentUpon>UpdateTrip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTrip.aspx.designer.cs">
+      <DependentUpon>UpdateTrip.aspx</DependentUpon>
     </Compile>
     <Compile Include="wrong.aspx.cs">
       <DependentUpon>wrong.aspx</DependentUpon>
