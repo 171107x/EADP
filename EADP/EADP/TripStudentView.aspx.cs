@@ -24,27 +24,27 @@ namespace EADP
                 html.Append("<hr/>");
                 foreach (DataRow row in dt.Rows)
                 {
-                    html.Append("<div class='col-sm-4'>");
+                    html.Append("<div class='col-sm-6'>");
                     html.Append("<div class='card'>");
                     html.Append("<div class='card-body'>");
-                    html.Append("<img class='card-img-top' src='Images/france.jpg' style='width:250px;height:250px;'>");
-                    html.Append("<h5 class='card-title'>");
+                    html.Append("<img class='card-img-top col-sm-4' src='Images/france.jpg' style='width:300px;height:250px;'>");
+                    html.Append("<h3 class='card-title bold'>");
                     html.Append(row[0].ToString());
-                    html.Append("</h5>");
+                    html.Append("</h3>");
                     html.Append("<p class='card-text'>");
                     html.Append(row[1].ToString());
                     html.Append("</p>");
                     html.Append("<p class='card-text'>");
-                    html.Append("$"+row[2].ToString());
+                    html.Append("Price: $"+row[2].ToString());
                     html.Append("</p>");
-                    html.Append("<a href='#' class='btn btn-primary'>Register</a>");
-                    html.Append("<br/>");
-                    html.Append("<br/>");
-                    html.Append("<br/>");
-                    html.Append("<br/>");
+                    html.Append("<br/><br/><br/><br/><br/>");
+                    html.Append("<a href='#' class='btn btn-primary float-right'>Register</a>");
+                    html.Append("<br/><br/><br/><br/>");
                     html.Append("</div>");
                     html.Append("</div>");
                     html.Append("</div>");
+
+                    html.Append("");
                 }
                 html.Append("</div>");
 

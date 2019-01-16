@@ -92,5 +92,10 @@ namespace EADP
             }
             //Response.Redirect("Tripmanagement.aspx");
         }
+
+        protected void studList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("regStudList.aspx");
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -49,6 +50,47 @@ namespace EADP.DAL
 
             return result;
 
+        }
+
+        public List<StudentReg> getStudListInfo()
+        {
+            List<StudentReg> studentList = new List<StudentReg>();
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
+            StringBuilder sqlStr = new StringBuilder();
+            sqlStr.AppendLine("SELECT RegisteredStudent.StudentAdmin, Trip.TripID, RegisteredStudent.PassportNO, RegisteredStudent.PassportExpiry FROM RegisteredStudent");
+            //sqlStr.AppendLine("SELECT * FROM RegisteredStudent");
+            sqlStr.AppendLine("INNER JOIN Trip");
+            sqlStr.AppendLine("ON RegisteredStudent.TripID = Trip.TripID");
+            sqlStr.AppendLine("WHERE RegisteredStudent.TripID = 'Korea2018'");
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+
+            da.Fill(ds, "studList");
+
+            int rec_cnt = ds.Tables["studList"].Rows.Count;
+            if (rec_cnt > 0)
+            {
+                foreach (DataRow row in ds.Tables["studList"].Rows)
+                {
+                    StudentReg myStudList = new StudentReg();
+
+                    myStudList.TripID = Convert.ToString(row["TripID"]);
+                    myStudList.studentAdmin = row["StudentAdmin"].ToString();
+                    myStudList.PassportNO = Convert.ToString(row["PassportNO"]);
+                    myStudList.PassportExpiry = Convert.ToDateTime(row["PassportExpiry"]);
+
+                    studentList.Add(myStudList);
+                }
+            }
+            else
+            {
+                studentList = null;
+            }
+
+            return studentList;
         }
     }
 }

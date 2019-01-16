@@ -5,10 +5,13 @@ using System.Web;
 
 namespace EADP.DAL
 {
-    public class StudReg
+    //changed filename from StudReg to StudentReg
+    public class StudentReg
     {
         public string studentAdmin { get; set; }
-        public int tripID { get; set; }
+        //changes made to trip id
+        //initially was public int tripID {get; set;}
+        public string TripID { get; set; }
         public string nationality { get; set; }
         public string MobileNO { get; set; }
 
