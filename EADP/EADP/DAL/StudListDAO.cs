@@ -54,7 +54,7 @@ namespace EADP.DAL
                     myTD.MedicalHistory = row["MedicalHistory"].ToString();
                     myTD.FASscheme = row["FASscheme"].ToString();
                     myTD.Remarks = row["Remarks"].ToString();
-
+                    myTD.TripStatus = row["TripStatus"].ToString();
 
                     tdList.Add(myTD);
                 }

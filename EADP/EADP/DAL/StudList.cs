@@ -23,6 +23,7 @@ namespace EADP.DAL
         public string MedicalHistory { get; set; }
         public string FASscheme { get; set; }
         public string Remarks { get; set; }
+        public string TripStatus { get; set; }
 
     }
 }

@@ -41,7 +41,8 @@
             <asp:BoundField DataField="StudentName" HeaderText="Student Name" />
             <asp:BoundField DataField="Gender" HeaderText="Gender" />
             <asp:BoundField DataField="school" HeaderText="Diploma" />
-            <asp:BoundField DataField="PEMGroup" HeaderText="PEM Group" />
+            <asp:BoundField DataField="PEMGroup" HeaderText="PEM Group"/>
+            <asp:BoundField DataField="TripSatus" ReadOnly="True" Visible="False"/>
             <asp:CommandField SelectText="More Details" ShowSelectButton="True" />
             <%--<asp:CommandField ButtonType="Button" EditText="Accept" ShowEditButton="True" />--%>
             <%--<ItemTemplate>
