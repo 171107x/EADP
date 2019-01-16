@@ -60,10 +60,8 @@
                                     </span>                                   
                                 </a>
                             <ul class="dropdown-menu">
-                              <li><a href="Account.aspx">Account</a></li>
-                                <li><a href="#">Trip Status</a></li>
-                                <li><a href="Status.aspx">Status</a></li>
-                              <li><a href="#">Setting</a></li>    
+                                <li><a href="Account.aspx">Account</a></li>                                
+                                <li><a href="Status.aspx">Trip Status</a></li>                              
                                 <li><asp:LinkButton runat="server" ID="Logout" OnClick="Logout_OnClick">Logout</asp:LinkButton></li>                  
                             </ul>
                           </li>

@@ -27,7 +27,7 @@
         </div>
     </div>--%>
     <div class="container">
-        <asp:GridView ID="GVStatus" runat="server" AutoGenerateColumns="False" ShowHeader="False" Width="100%" CssClass="auto-style2">
+        <asp:GridView ID="GVStatus" runat="server" AutoGenerateColumns="False" ShowHeader="False" Width="100%" CssClass="auto-style2" OnRowCommand="GVStatus_RowCommand">
             <Columns>
                 <asp:TemplateField>
                     <ItemStyle Width="200px" />
@@ -39,7 +39,14 @@
                 </asp:BoundField>
                 <asp:BoundField DataField="TripStatus" ReadOnly="True"><ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
+                <asp:TemplateField>
+                    <ItemStyle Width="200px" />
+                    <ItemTemplate>
+                    <asp:Button ID="btnCancel" CommandName="Cancel Trip" Text="Cancel Trip" runat="server" CommandArgument="<%# Container.DataItemIndex %>"/>                    
+                </ItemTemplate>
+            </asp:TemplateField>
             </Columns>
         </asp:GridView>
+        <asp:Label ID="Label1" runat="server"></asp:Label>
     </div>
 </asp:Content>

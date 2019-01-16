@@ -30,7 +30,7 @@
                 </td>
             </tr>           
         </table>
-        <asp:GridView runat="server" ID="GridViewTD" CssClass="table" AutoGenerateColumns="False" OnRowCommand="GridViewTD_RowCommand" OnSelectedIndexChanged="GridViewTD_SelectedIndexChanged">
+        <asp:GridView runat="server" ID="GridViewTD" CssClass="table" AutoGenerateColumns="False" OnRowCommand="GridViewTD_RowCommand" OnSelectedIndexChanged="GridViewTD_SelectedIndexChanged" OnRowDataBound="GridViewTD_RowDataBound1">
         <Columns>            
             <asp:TemplateField>   
                 <ItemTemplate>
@@ -41,8 +41,7 @@
             <asp:BoundField DataField="StudentName" HeaderText="Student Name" />
             <asp:BoundField DataField="Gender" HeaderText="Gender" />
             <asp:BoundField DataField="school" HeaderText="Diploma" />
-            <asp:BoundField DataField="PEMGroup" HeaderText="PEM Group"/>
-            <asp:BoundField DataField="TripSatus" ReadOnly="True" Visible="False"/>
+            <asp:BoundField DataField="PEMGroup" HeaderText="PEM Group"/>            
             <asp:CommandField SelectText="More Details" ShowSelectButton="True" />
             <%--<asp:CommandField ButtonType="Button" EditText="Accept" ShowEditButton="True" />--%>
             <%--<ItemTemplate>
@@ -55,6 +54,7 @@
                 <asp:Button ID="btnReject" CommandName="Reject" Text="Reject" runat="server" CommandArgument="<%# Container.DataItemIndex %>"/>
                 </ItemTemplate>
             </asp:TemplateField>
+            <asp:BoundField DataField="TripStatus" HeaderText="TripStatus"/>
         </Columns>
         </asp:GridView>
         <asp:Button ID="Button1" runat="server" Text="Download to Excel" Width="154px" OnClick="Button1_Click" />

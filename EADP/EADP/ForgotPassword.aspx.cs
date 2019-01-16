@@ -22,7 +22,7 @@ namespace EADP
             {
                 MailMessage mailMessage = new MailMessage("nyptrip@gmail.com", TextBox1.Text);
                 // Specify the email body
-                mailMessage.Body = "Hi \n To reset your Ubisoft account password please click here. http://" + HttpContext.Current.Request.Url.Authority + "/ResetPassword.aspx?email=" + TextBox1.Text + " \n If you have previously requested to change your password, only the link contained in this e - mail is valid.";
+                mailMessage.Body = "Hi \n To reset your account password please click here. http://" + HttpContext.Current.Request.Url.Authority + "/ResetPassword.aspx?email=" + TextBox1.Text + " \n If you have previously requested to change your password, only the link contained in this e - mail is valid.";
                 // Specify the email Subject
                 mailMessage.Subject = "testing";
                 mailMessage.IsBodyHtml = true;
@@ -38,7 +38,7 @@ namespace EADP
                 smtpClient.EnableSsl = true;
                 // Finall send the email message using Send() method
                 smtpClient.Send(mailMessage);
-                status.Text = HttpContext.Current.Request.Url.Authority; 
+                status.Text = "We have send a link to your email to reset your password"; 
 
             }
             catch (Exception ex)

@@ -43,5 +43,11 @@ namespace EADP
         {
             Response.Redirect("ExtraStudentDetails.aspx");
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session["page"] = "ConfirmParticulars.aspx";
+            Response.Redirect("UpdateParticulars.aspx");
+        }
     }
 }

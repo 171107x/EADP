@@ -73,7 +73,7 @@
         </table>                 
         <div style="text-align:center;" draggable="auto">
             <asp:Button ID="Button1" runat="server" Text="Confirm" CssClass="btn" OnClick="Button1_Click" />
-            <asp:Button ID="Button2" runat="server" Text="Update" CssClass="btn" />
+            <asp:Button ID="Button2" runat="server" Text="Update" CssClass="btn" OnClick="Button2_Click" />
 
         </div>       
         

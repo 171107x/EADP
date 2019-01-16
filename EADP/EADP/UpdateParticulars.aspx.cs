@@ -71,8 +71,11 @@ namespace EADP
             result = sqlCmd.ExecuteNonQuery();
 
             myConn.Close();
-            lblResult.Text = "Particulars Updated"; 
-
+            lblResult.Text = "Particulars Updated";
+            if (Session["page"] != null)
+            {
+                Response.Redirect(Session["page"].ToString());
+            }
 
         }
     }

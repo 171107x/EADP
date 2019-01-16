@@ -36,7 +36,10 @@ namespace EADP
             tdList = tdDAO.getRegbyStudAdmin(Session["username"].ToString());
             if (Encryption.MD5Hash(tbPassword.Text) != tdList.studentPassword.ToString())
             {
-                errorMsg.Text = "Your current password is incorret";
+                errorMsg.Text = "Your current password is incorrect";
+            } else if (TextBox1.Text != TextBox2.Text)
+            {
+                errorMsg.Text = "You new password is different than the confirm password";
             } else
             {
                 string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
@@ -59,7 +62,10 @@ namespace EADP
                 
                 myConn.Close();
                 errorMsg.Text = "Password change";
+                Response.AddHeader("Refresh", "5;URL=Account.aspx");
             }
         }
+
+        
     }
 }

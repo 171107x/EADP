@@ -12,5 +12,6 @@ namespace EADP.DAL
         public string TripStatus { get; set; }
         public string StudentAdmin { get; set; } 
         public string Country { get; set; }
+        public string TripID { get; set; }
     }
 }

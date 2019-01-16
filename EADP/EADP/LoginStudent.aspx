@@ -62,7 +62,7 @@
                     <asp:Button runat="server" cssClass="btn btn-primary btn-block" Text="Log in" OnClick="Unnamed1_Click"></asp:Button>
                 </div>
                 <div class="clearfix">
-                    <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+                    
                     <a href="ForgotPassword.aspx" class="pull-right">Forgot Password?</a>
                 </div>                   
             <asp:Label runat="server" ID="errorMsg" ForeColor="Red" CssClass="text-center" ></asp:Label>

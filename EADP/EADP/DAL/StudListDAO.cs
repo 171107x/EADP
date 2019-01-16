@@ -41,7 +41,6 @@ namespace EADP.DAL
                 {
                     StudList myTD = new StudList();
 
-
                     myTD.studentAdmin = row["StudentAdmin"].ToString();
                     myTD.studentName = row["StudentName"].ToString();
                     myTD.gender = row["Gender"].ToString();
@@ -58,6 +57,61 @@ namespace EADP.DAL
 
                     tdList.Add(myTD);
                 }
+            }
+            else
+            {
+                tdList = null;
+            }
+
+            return tdList;
+        }
+        public List<StudList> getTDbyStudentAdmin(string StudentAdmin, string tripID)
+        {
+            
+            DataSet ds = new DataSet();
+            DataTable tdData = new DataTable();
+            List<StudList> tdList = new List<StudList>();
+
+            StringBuilder sqlStr = new StringBuilder();
+            sqlStr.AppendLine("select Student.StudentAdmin, TripID, StudentName, Gender, School, PEMGroup,Nationality,PassportNO, PassportExpiry, DietConstraint, MedicalHistory,TripStatus, FASscheme from RegisteredStudent");
+            sqlStr.AppendLine("INNER JOIN Student");
+            sqlStr.AppendLine("ON RegisteredStudent.StudentAdmin = Student.StudentAdmin");
+            sqlStr.AppendLine("where Student.StudentAdmin = @StudentAdmin AND TripID = @paraCustId;");
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+
+
+            da.SelectCommand.Parameters.AddWithValue("StudentAdmin", StudentAdmin);
+            da.SelectCommand.Parameters.AddWithValue("paraCustId", tripID);
+
+
+            da.Fill(ds, "TableTD");
+
+
+            int rec_cnt = ds.Tables["TableTD"].Rows.Count;
+            if (rec_cnt > 0)
+            {
+                foreach (DataRow row in ds.Tables["TableTD"].Rows)
+                {
+
+                    StudList myTD = new StudList();
+                    myTD.studentAdmin = row["StudentAdmin"].ToString();
+                    myTD.studentName = row["StudentName"].ToString();
+                    myTD.gender = row["Gender"].ToString();
+                    myTD.school = row["School"].ToString();
+                    myTD.pemGroup = row["PEMGroup"].ToString();
+                    myTD.nationality = row["Nationality"].ToString();
+                    myTD.passportNo = row["PassportNO"].ToString();
+                    myTD.passportE = Convert.ToDateTime(row["PassportExpiry"]);
+                    myTD.DietConstraint = row["DietConstraint"].ToString();
+                    myTD.MedicalHistory = row["MedicalHistory"].ToString();
+                    myTD.FASscheme = row["FASscheme"].ToString();
+                    myTD.TripStatus = row["TripStatus"].ToString();
+                    tdList.Add(myTD);
+                }
+                    
+                
             }
             else
             {
@@ -156,6 +210,7 @@ namespace EADP.DAL
 
                 DataRow row = ds.Tables["TableTD"].Rows[0];
                 myTD.studentAdmin = row["StudentAdmin"].ToString();
+                myTD.studentPassword = row["StudentPassword"].ToString();
                 myTD.studentName = row["StudentName"].ToString();
                 myTD.gender = row["Gender"].ToString();
                 myTD.school = row["School"].ToString();
