@@ -12,7 +12,7 @@ namespace EADP.DAL
     public class SurveyQDAO
     {
         string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
-        public int InsertSurveyAnswers(int surveyQnsID, string q1, string q2, string q3, string q4)
+        public int InsertSurveyAnswers(string q1, string q2, string q3, string q4)
         {
             StringBuilder sqlStr = new StringBuilder();
             int result = 0;    // Execute NonQuery return an integer value
@@ -21,8 +21,8 @@ namespace EADP.DAL
 
             //         parameterised query in values clause
             //
-            sqlStr.AppendLine("INSERT INTO SurveyQns (SurveyQID, Q1, Q2, Q3, Q4)");
-            sqlStr.AppendLine("VALUES (@paraSurveyQID,@paraQ1, @paraQ2, @paraQ3, @paraQ4)");
+            sqlStr.AppendLine("INSERT INTO SurveyQns ( Q1, Q2, Q3, Q4)");
+            sqlStr.AppendLine("VALUES (@paraQ1, @paraQ2, @paraQ3, @paraQ4)");
 
 
             // Step 2 :Instantiate SqlConnection instance and SqlCommand instance
@@ -33,7 +33,6 @@ namespace EADP.DAL
 
             // Step 3 : Add each parameterised query variable with value
             //          complete to add all parameterised queries
-            sqlCmd.Parameters.AddWithValue("@paraSurveyQID", surveyQnsID);
             sqlCmd.Parameters.AddWithValue("@paraQ1", q1);
             sqlCmd.Parameters.AddWithValue("@paraQ2", q2);
             sqlCmd.Parameters.AddWithValue("@paraQ3", q3);
@@ -95,5 +94,72 @@ namespace EADP.DAL
 
             return myTD;
         }
+        public List<SurveyQ> getSurveyID()
+        {
+            List<SurveyQ> List = new List<SurveyQ>();
+            DataSet ds = new DataSet();
+            DataTable tdData = new DataTable();
+
+            StringBuilder sqlStr = new StringBuilder();
+            sqlStr.AppendLine("select * from SurveyQns");
+
+
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+
+
+
+
+            da.Fill(ds, "TableTD");
+
+
+
+            int rec_cnt = ds.Tables["TableTD"].Rows.Count;
+
+            if (rec_cnt > 0)
+            {
+                foreach (DataRow row in ds.Tables["TableTD"].Rows)
+                {
+                    SurveyQ slist = new SurveyQ();
+                    slist.SurveyQID = row["SurveyQID"].ToString();
+                    List.Add(slist);
+                }
+            }
+
+            else
+            {
+                List = null;
+            }
+
+            return List;
+
+        }
+        public int updateSurvey(int surveyQnsID,string q1, string q2, string q3, string q4)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            int result;
+            myConn.Open();
+            StringBuilder sqlStr = new StringBuilder();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlStr.AppendLine("UPDATE SurveyQns");
+            sqlStr.AppendLine("SET Q1 = @paraQ1,");
+            sqlStr.AppendLine("Q2 = @paraQ2,");
+            sqlStr.AppendLine("Q3 = @paraQ3,");
+            sqlStr.AppendLine("Q4 = @paraQ4");
+            sqlStr.AppendLine("Where SurveyQID = @paraSurveyQID");
+            sqlCmd = new SqlCommand(sqlStr.ToString(), myConn);
+            sqlCmd.Parameters.AddWithValue("@paraSurveyQID", surveyQnsID);
+            sqlCmd.Parameters.AddWithValue("@paraQ1", q1);
+            sqlCmd.Parameters.AddWithValue("@paraQ2", q2);
+            sqlCmd.Parameters.AddWithValue("@paraQ3", q3);
+            sqlCmd.Parameters.AddWithValue("@paraQ4", q4);
+            result = sqlCmd.ExecuteNonQuery();
+            myConn.Close();
+
+            return result;
+        }
+
     }
-    }
+}

@@ -17,7 +17,6 @@ namespace EADP
 
         protected void submitBtn_Click(object sender, EventArgs e)
         {
-            int SurveyQID = 1;
             string q1 = TextBoxq1.Text;
             string q2 = TextBoxq2.Text;
             string q3 = TextBoxq3.Text;
@@ -25,7 +24,7 @@ namespace EADP
 
             SurveyQ surveyObj = new SurveyQ();
             SurveyQDAO surDAO = new SurveyQDAO();
-            surDAO.InsertSurveyAnswers(SurveyQID,  q1, q2, q3, q4);
+            surDAO.InsertSurveyAnswers(q1, q2, q3, q4);
             Response.Redirect("Statistics.aspx");
         }
     }
