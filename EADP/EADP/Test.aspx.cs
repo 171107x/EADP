@@ -18,6 +18,7 @@ namespace EADP
             SurveyQDAO tdDAO = new SurveyQDAO();
             tdList = tdDAO.getSurveyQuestions(1);
             LblCountry.Text = tdList.q1.ToString();
+            LblSeason.Text = tdList.q2.ToString();
 
         }
 
