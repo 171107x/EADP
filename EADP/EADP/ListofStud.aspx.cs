@@ -154,10 +154,10 @@ namespace EADP
             SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);           
             DataTable dt = new DataTable();
             da.Fill(dt);
-            string attachment = "attachment; filename=StudentDetails "+ Session["Code"].ToString() + ".xls";
             Response.ClearContent();
-            Response.AddHeader("content-disposition", attachment);
-            Response.ContentType = "application/vnd.ms-excel";
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", "Customers.xls"));
+            Response.ContentType = "application/ms-excel";
             string tab = "";
             foreach (DataColumn dc in dt.Columns)
             {
