@@ -191,6 +191,8 @@
     <Compile Include="Createsurvey.aspx.designer.cs">
       <DependentUpon>Createsurvey.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\country.cs" />
+    <Compile Include="DAL\countryDAO.cs" />
     <Compile Include="DAL\Encryption.cs" />
     <Compile Include="DAL\Feedback.cs" />
     <Compile Include="DAL\FeedbackDAO.cs" />
