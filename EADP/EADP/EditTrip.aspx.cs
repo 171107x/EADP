@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,7 +17,27 @@ namespace EADP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+                SqlConnection myConn = new SqlConnection(DBConnect);
+                DataTable dtStaff = new DataTable();
 
+                StringBuilder sqlStr = new StringBuilder();
+                sqlStr.AppendLine("SELECT StaffName, StaffID FROM Staff");
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+                da.Fill(dtStaff);
+
+                ddlStaff.Items.Clear();
+                ddlStaff.Items.Insert(0, new ListItem("--Select--", "0"));
+                ddlStaff.AppendDataBoundItems = true;
+
+                ddlStaff.DataTextField = "StaffName";
+                ddlStaff.DataValueField = "StaffID";
+                ddlStaff.DataSource = dtStaff;
+                ddlStaff.DataBind();
+            }
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
@@ -24,8 +45,8 @@ namespace EADP
             tbProgCode.Text = string.Empty;
             tbProgYear.Text = string.Empty;
             //tbDuration.Text = string.Empty;
-            tbCountry.Text = string.Empty;
-            tbLeadStaff.Text = string.Empty;
+            //tbCountry.Text = string.Empty;
+            //tbLeadStaff.Text = string.Empty;
             tbMaxStud.Text = string.Empty;
             tbPrice.Text = string.Empty;
             imgUpload.Attributes.Clear();
@@ -41,21 +62,21 @@ namespace EADP
             //Response.redirect("EditTrip.aspx");
         }
 
-        private void show_img()
-        {
-            DirectoryInfo d = new DirectoryInfo(MapPath("~/tripImg/"));
-            FileInfo[] r = d.GetFiles();
-            DataTable dt = new DataTable();
-            dt.Columns.Add("path");
+        //private void show_img()
+        //{
+        //    DirectoryInfo d = new DirectoryInfo(MapPath("~/tripImg/"));
+        //    FileInfo[] r = d.GetFiles();
+        //    DataTable dt = new DataTable();
+        //    dt.Columns.Add("path");
 
-            DataRow row = dt.NewRow();
-            /*int lastPos = r.Length - 1;*/
-            row["path"] = "~/tripImg/" + r[0].Name;
-            dt.Rows.Add(row);
+        //    DataRow row = dt.NewRow();
+        //    /*int lastPos = r.Length - 1;*/
+        //    row["path"] = "~/tripImg/" + r[0].Name;
+        //    dt.Rows.Add(row);
 
-            DataList1.DataSource = dt;
-            DataList1.DataBind();
-        }
+        //    DataList1.DataSource = dt;
+        //    DataList1.DataBind();
+        //}
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -66,28 +87,43 @@ namespace EADP
                 DateTime EndDate = Convert.ToDateTime(tbEndDate.Text.ToString());
                 TimeSpan Diff = EndDate - StartDate;
                 int Duration = Convert.ToInt16(Diff.Days.ToString());
-                string Country = tbCountry.Text.ToString();
+                string Country = ddlCountry.SelectedValue.ToString();
                 string Description = Request.Form["taDesc"].ToString();
                 int MaxStudent = Convert.ToInt16(tbMaxStud.Text.ToString());
                 double ETripPrice = Convert.ToDouble(tbPrice.Text.ToString());
-                int StaffID = Convert.ToInt16(tbLeadStaff.Text.ToString());
-                string Image = "~/tripImg/" + Guid.NewGuid().ToString() + "" + Path.GetExtension(imgUpload.FileName);
+                string TripType = ddlTripType.SelectedValue.ToString();
+                //int StaffID = Convert.ToInt16(tbLeadStaff.Text.ToString());
+                //int StaffID = Convert.ToInt16(ddlStaff.SelectedValue.ToString());
+                //string Image = "~/tripImg/" + Guid.NewGuid().ToString() + "" + Path.GetExtension(imgUpload.FileName);
+                string str = imgUpload.FileName;
+                imgUpload.PostedFile.SaveAs(Server.MapPath("~/tripImg/" + str));
+                string Image = Convert.ToString("tripImg/" + str.ToString());
 
-                if(StartDate < DateTime.Now.Date)
+                if (ddlStaff.SelectedValue == "0")
                 {
-                    lblValid.Text = "Invalid Start Date!";
-                    tbProgYear.Focus();
-                }
-                else if(EndDate < DateTime.Now.Date)
-                {
-                    lblValid.Text = "Invalid End Date!";
-                    tbEndDate.Focus();
+                    lblStaff.Text = "Please select a staff";
+                    lblStaff.ForeColor = System.Drawing.Color.Red;
                 }
                 else
                 {
-                    tripDAO newTrip = new tripDAO();
-                    newTrip.InsertTrip(TripID, StartDate, EndDate, Duration, Country, Description, MaxStudent, ETripPrice, StaffID, Image);
-                    Response.Redirect("TripManagement.aspx");
+                    int StaffID = Convert.ToInt16(ddlStaff.SelectedValue.ToString());
+
+                    if (StartDate < DateTime.Now.Date)
+                    {
+                        lblValid.Text = "Invalid Start Date!";
+                        tbProgYear.Focus();
+                    }
+                    else if (EndDate < DateTime.Now.Date)
+                    {
+                        lblValid.Text = "Invalid End Date!";
+                        tbEndDate.Focus();
+                    }
+                    else
+                    {
+                        tripDAO newTrip = new tripDAO();
+                        newTrip.InsertTrip(TripID, StartDate, EndDate, Duration, Country, Description, MaxStudent, ETripPrice, StaffID, Image, TripType);
+                        Response.Redirect("TripManagement.aspx");
+                    }
                 }
             }
             else
@@ -103,10 +139,40 @@ namespace EADP
             {
                 string path = "~/tripImg/" + Guid.NewGuid().ToString() + "" + Path.GetExtension(imgUpload.FileName);
                 imgUpload.SaveAs(MapPath(path));
-                show_img();
+                //show_img();
             }
 
         }
+
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
+        //    if (imgUpload.HasFile)
+        //    {
+        //        string str = imgUpload.FileName;
+        //        imgUpload.PostedFile.SaveAs(Server.MapPath("~/tripImg/" + str));
+        //        string Image = "~/tripImg/" + str.ToString();
+        //        //string name = TextBox1.Text;
+
+        //        SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True");
+        //        SqlCommand cmd = new SqlCommand("insert into tbl_data values(@name,@Image)", con);
+        //        //cmd.Parameters.AddWithValue("@name", name);
+        //        cmd.Parameters.AddWithValue("Image", Image);
+
+        //        con.Open();
+        //        cmd.ExecuteNonQuery();
+        //        con.Close();
+
+        //        Label1.Text = "Image Uploaded";
+        //        Label1.ForeColor = System.Drawing.Color.ForestGreen;
+
+        //    }
+
+        //    else
+        //    {
+        //        Label1.Text = "Please Upload your Image";
+        //        Label1.ForeColor = System.Drawing.Color.Red;
+        //    }
+        //}
 
         protected void ValidateProgCode(object source, ServerValidateEventArgs args)
         {

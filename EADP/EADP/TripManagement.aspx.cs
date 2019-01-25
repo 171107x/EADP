@@ -95,7 +95,11 @@ namespace EADP
 
         protected void studList_Click(object sender, EventArgs e)
         {
-            Response.Redirect("regStudList.aspx");
+            LinkButton studList = sender as LinkButton;
+            GridViewRow row = studList.NamingContainer as GridViewRow;
+            string TripID = row.Cells[0].Text;
+            Session["SSTripID"] = TripID;
+            Response.Redirect("regStudent.aspx");
         }
     }
 }

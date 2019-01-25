@@ -94,31 +94,31 @@ namespace EADP {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// tbCountry control.
+        /// ddlCountry control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbCountry;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCountry;
         
         /// <summary>
-        /// RequiredFieldValidator5 control.
+        /// lblStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.Label lblStaff;
         
         /// <summary>
-        /// tbLeadStaff control.
+        /// ddlStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbLeadStaff;
+        protected global::System.Web.UI.WebControls.DropDownList ddlStaff;
         
         /// <summary>
         /// RequiredFieldValidator7 control.
@@ -166,6 +166,24 @@ namespace EADP {
         protected global::System.Web.UI.WebControls.TextBox tbPrice;
         
         /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        
+        /// <summary>
+        /// ddlTripType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTripType;
+        
+        /// <summary>
         /// DataList1 control.
         /// </summary>
         /// <remarks>
@@ -191,6 +209,15 @@ namespace EADP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpload;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// btnClear control.

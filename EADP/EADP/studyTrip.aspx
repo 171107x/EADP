@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="TripManagement.aspx.cs" Inherits="EADP.TripManament" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="studyTrip.aspx.cs" Inherits="EADP.studyTrip" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -62,8 +62,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="sidenav">
-        <a href="TripManagement.aspx" class="active"><i class="fas fa-home"></i>&nbsp;&nbsp;Trip Management</a>
-        <a href="studyTrip.aspx" onclick="BtnRedirect_Click"><i class="fas fa-book"></i>&nbsp;&nbsp;&nbsp;Study Trips</a>
+        <a href="TripManagement.aspx"><i class="fas fa-home"></i>&nbsp;&nbsp;Trip Management</a>
+        <a href="#"  class="active" onclick="BtnRedirect_Click"><i class="fas fa-book"></i>&nbsp;&nbsp;&nbsp;Study Trips</a>
         <a href="#ImmersionTrips"><i class="fas fa-atlas"></i>&nbsp;&nbsp;&nbsp;Immersion Trips</a>
         <a href="#Internships"><i class="fas fa-suitcase"></i>&nbsp;&nbsp;&nbsp;Internships</a>
     </div>
@@ -71,33 +71,11 @@
         <br />
         <br />
         <br />
-        <h1>Trip Management</h1>
-        <%--        <div class="row">
-            <div class="col-xs-6 col-md-3">
-                <h4 class="thumbnail">
-                    Number of Trips Avilable: <span class="label label-info">3</span>
-                </h4>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <h4 class="thumbnail">
-                    Students registered: <span class="label label-info">123</span>
-                </h4>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <h4 class="thumbnail">
-                   Pending requests: <span class="label label-info">59</span>
-                </h4> 
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <h4 class="thumbnail">
-                   Students registered: <span class="label label-info">123</span>
-                </h4>
-            </div>
-        </div>--%>
+        <h1>Study Trip</h1>
         <hr />
         <h3>Current/Future Trips</h3>
         <asp:Label ID="lblMsg" runat="server" ForeColor="Red"></asp:Label>
-        <asp:GridView ID="GridViewTrip" runat="server" CssClass="table table-bordered table-hover" AutoGenerateColumns="False" OnSelectedIndexChanged="GridViewTrip_SelectedIndexChanged">
+        <asp:GridView ID="GridViewTrip" runat="server" CssClass="table table-bordered table-hover" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="TripID" HeaderText="ProgCode" />
                 <asp:BoundField DataField="StartDate" DataFormatString="{0:d}" HeaderText="Start Date" />
@@ -107,27 +85,20 @@
                 <asp:BoundField DataField="Duration" HeaderText="Duration" />
                 <asp:BoundField DataField="Description" HeaderText="Description" />
                 <asp:BoundField DataField="MaxStudent" HeaderText="Maximum Student Intake" HeaderStyle-Width="10%" ItemStyle-Width="10%"
-                    FooterStyle-Width="10%" >
-<FooterStyle Width="10%"></FooterStyle>
-
-<HeaderStyle Width="10%"></HeaderStyle>
-
-<ItemStyle Width="10%"></ItemStyle>
-                </asp:BoundField>
+                    FooterStyle-Width="10%" />
                 <asp:BoundField DataField="StaffName" HeaderText="Staff In Charge" />
                 <asp:TemplateField HeaderText="Student List">
                     <ItemTemplate>
                         <asp:LinkButton ID="studList" runat="server" OnClick="studList_Click">View</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:CommandField ShowSelectButton="True" HeaderText="Update" SelectText="Update" />
+                <asp:CommandField ShowSelectButton="True" HeaderText="Update" />
                 <asp:TemplateField HeaderText="Delete">
                     <ItemTemplate>
                         <asp:LinkButton ID="tripDelete" runat="server" OnClientClick="return confirm('Delete?')" OnClick="tripDelete_Click">Delete</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
-            <%--<HeaderStyle BackColor="white" Font-Bold="true" ForeColor="White" />--%>
         </asp:GridView>
         <asp:Button runat="server" class="btn btn-primary" Text="Add Trip" ID="btnClr" OnClick="btnClr_Click" />
         <br />
@@ -151,11 +122,9 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
-            <%--<HeaderStyle BackColor="#282639" Font-Bold="true" ForeColor="White" />--%>
         </asp:GridView>
 
         <hr />
         <br />
     </div>
-    <!--container end-->
 </asp:Content>

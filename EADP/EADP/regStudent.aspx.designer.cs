@@ -10,24 +10,33 @@
 namespace EADP {
     
     
-    public partial class TripStudentView {
+    public partial class regStudent {
         
         /// <summary>
-        /// Lbl_description control.
+        /// lblNoStud control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_description;
+        protected global::System.Web.UI.WebControls.Label lblNoStud;
         
         /// <summary>
-        /// TripList control.
+        /// GVStudList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView TripList;
+        protected global::System.Web.UI.WebControls.GridView GVStudList;
+        
+        /// <summary>
+        /// btnBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBack;
     }
 }
