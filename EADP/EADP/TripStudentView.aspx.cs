@@ -87,7 +87,7 @@ namespace EADP
             //TripList.SelectedItemTemplate = 
             //Session["SScountry"] = 
             //Lbl_description.Text = Session["SScountry"].ToString();
-            Response.Redirect("TripDetais.aspx");
+            Response.Redirect("TripDetails.aspx");
         }
     }
 }

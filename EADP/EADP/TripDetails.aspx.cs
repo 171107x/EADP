@@ -13,5 +13,10 @@ namespace EADP
         {
 
         }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ExtraStudentDetails.aspx");
+        }
     }
 }

@@ -11,6 +11,46 @@ namespace EADP.DAL
 {
     public class StudListDAO
     {
+        public List<StudList> listStud(string tripid)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+
+            List<StudList> tdList = new List<StudList>();
+            DataSet ds = new DataSet();
+            DataTable tdData = new DataTable();
+
+            StringBuilder sqlStr = new StringBuilder();
+            sqlStr.AppendLine("select Student.StudentName from Student");
+            sqlStr.AppendLine("Inner Join RegisteredStudent");
+            sqlStr.AppendLine("on Student.StudentAdmin = RegisteredStudent.StudentAdmin");
+            sqlStr.AppendLine("where TripID = @paraTripID AND TripStatus = 'Accepted';");
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+
+            da.SelectCommand.Parameters.AddWithValue("paraTripID", tripid);
+
+            da.Fill(ds, "TableTD");
+
+            int rec_cnt = ds.Tables["TableTD"].Rows.Count;
+
+            if (rec_cnt > 0)
+            {
+                foreach (DataRow row in ds.Tables["TableTD"].Rows)
+                {
+                    StudList myTD = new StudList();
+
+                    myTD.studentAdmin = row["StudentAdmin"].ToString();                   
+                    tdList.Add(myTD);
+                }
+                              
+            }
+            else
+            {
+                tdList = null;
+            }
+            return tdList;
+        }
         string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
         public List<StudList> getTDbyTripID(string tripID)
         {

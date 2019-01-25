@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Text;
 using System.Drawing;
+using System.Web.UI.HtmlControls;
 
 namespace EADP
 {
@@ -18,16 +19,23 @@ namespace EADP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            StudListDAO tdDAO = new StudListDAO();
+            List<StudList> tdList = new List<StudList>();
+            
             if (!Page.IsPostBack)
             {
-                Session["Code"] = "Korea2018";
-                StudListDAO tdDAO = new StudListDAO();
-                List<StudList> tdList = new List<StudList>();
+                         
                 tdList = tdDAO.getTDbyTripID(Session["Code"].ToString());
                 GridViewTD.DataSource = tdList;
                 GridViewTD.DataBind();
                 ProgCode.Text = "<h1>" + Session["Code"].ToString() + "</h1>";
             }
+            countStud(Session["Code"].ToString());                    
+                      
+        }
+        
+        protected void countStud(string tripid)
+        {
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
 
             DataSet ds = new DataSet();
@@ -40,7 +48,7 @@ namespace EADP
             SqlConnection myConn = new SqlConnection(DBConnect);
             SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
 
-            da.SelectCommand.Parameters.AddWithValue("paraTripID", Session["Code"].ToString());
+            da.SelectCommand.Parameters.AddWithValue("paraTripID", tripid);
 
             da.Fill(ds, "TableTD");
 
@@ -50,14 +58,9 @@ namespace EADP
             {
                 DataRow row = ds.Tables["TableTD"].Rows[0];
                 lbStudent.Text = row[0].ToString();
-
             }
-            else
-            {
-                // do nothing
-            }
-
         }
+        
         protected void gvbind()
         {
             StudListDAO tdDAO = new StudListDAO();
@@ -101,6 +104,7 @@ namespace EADP
                 tdList = tdDAO.getTDbyTripID(Session["Code"].ToString());
                 GridViewTD.DataSource = tdList;
                 GridViewTD.DataBind();
+                countStud(Session["Code"].ToString());
             }
             if (e.CommandName == "Reject")
             {
@@ -134,6 +138,7 @@ namespace EADP
                 tdList = tdDAO.getTDbyTripID(Session["Code"].ToString());
                 GridViewTD.DataSource = tdList;
                 GridViewTD.DataBind();
+                countStud(Session["Code"].ToString());
             }
         }
         protected void GridViewTD_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,7 +161,7 @@ namespace EADP
             da.Fill(dt);
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", "Customers.xls"));
+            Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", "StudentList" + Session["Code"].ToString() + ".xls"));
             Response.ContentType = "application/ms-excel";
             string tab = "";
             foreach (DataColumn dc in dt.Columns)

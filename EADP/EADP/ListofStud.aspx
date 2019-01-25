@@ -50,18 +50,14 @@
              </ItemTemplate>--%>
             <asp:TemplateField>
                 <ItemTemplate>
-                <asp:Button ID="btnAccept" CommandName="Accept" Text="Accept" runat="server" CommandArgument="<%# Container.DataItemIndex %>"/>
-                <asp:Button ID="btnReject" CommandName="Reject" Text="Reject" runat="server" CommandArgument="<%# Container.DataItemIndex %>"/>
+                <asp:Button ID="btnAccept" CommandName="Accept" Text="Accept" runat="server" CommandArgument="<%# Container.DataItemIndex %>" CssClass="btn" />
+                <asp:Button ID="btnReject" CommandName="Reject" Text="Reject" runat="server" CommandArgument="<%# Container.DataItemIndex %>" CssClass="btn" />
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="TripStatus" HeaderText="TripStatus"/>
         </Columns>
-        </asp:GridView>
-        <asp:Button ID="Button1" runat="server" Text="Download to Excel" Width="154px" OnClick="Button1_Click" />
-    </div>
-    <asp:Label ID="Label1" runat="server"></asp:Label>
-    
-    
-    
-      
+        </asp:GridView>        
+        <asp:Button ID="Button1" runat="server" Text="Download to Excel" Width="154px" OnClick="Button1_Click" CssClass="btn" />
+        </div>
+    <asp:Label ID="Label1" runat="server"></asp:Label>          
 </asp:Content>

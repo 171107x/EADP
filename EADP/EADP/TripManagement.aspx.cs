@@ -98,8 +98,8 @@ namespace EADP
             LinkButton studList = sender as LinkButton;
             GridViewRow row = studList.NamingContainer as GridViewRow;
             string TripID = row.Cells[0].Text;
-            Session["SSTripID"] = TripID;
-            Response.Redirect("regStudent.aspx");
+            Session["Code"] = TripID;
+            Response.Redirect("ListofStud.aspx");
         }
     }
 }

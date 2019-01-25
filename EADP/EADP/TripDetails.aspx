@@ -34,7 +34,7 @@
                     </p>
 
                     <br />
-                    <asp:Button class='btn btn-primary float-right' runat='server' Text='Register'/>
+                    <asp:Button class='btn btn-primary float-right' runat='server' Text='Register' OnClick="Unnamed1_Click"/>
                     <asp:Button class='btn btn-primary float-right' runat='server' Text='Download Itenerary'/>
                     <br />
                     <br />
