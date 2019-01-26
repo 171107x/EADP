@@ -89,7 +89,10 @@ namespace EADP
             int MaxStudent = Convert.ToInt16(tbMaxStudUD.Text.ToString());
             double ETripPrice = Convert.ToDouble(tbPriceUD.Text.ToString());
             int StaffID = Convert.ToInt16(ddlStaffUD.SelectedValue.ToString());
-            string Image = "~/tripImg/" + Guid.NewGuid().ToString() + "" + Path.GetExtension(imgUploadUD.FileName);
+            //string Image = "~/tripImg/" + Guid.NewGuid().ToString() + "" + Path.GetExtension(imgUploadUD.FileName);
+            string str = imgUploadUD.FileName;
+            imgUploadUD.PostedFile.SaveAs(Server.MapPath("~/tripImg/" + str));
+            string Image = Convert.ToString("tripImg/" + str.ToString());
             string TripType = ddlTripType.SelectedValue.ToString();
             if (ddlStaffUD.SelectedValue == "0")
             {

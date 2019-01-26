@@ -111,6 +111,8 @@
     <Content Include="ExtraStudentDetails.aspx" />
     <Content Include="Feedback.aspx" />
     <Content Include="ForgotPassword.aspx" />
+    <Content Include="ImmersionTrip.aspx" />
+    <Content Include="regStudent.aspx" />
     <Content Include="ResetPassword.aspx" />
     <Content Include="scripts\jquery.color.js" />
     <Content Include="scripts\jquery.Jcrop.js" />
@@ -134,8 +136,10 @@
     <Content Include="Status.aspx" />
     <Content Include="StudAcc.aspx" />
     <Content Include="StudentDetails.aspx" />
+    <Content Include="studyTrip.aspx" />
     <Content Include="Survey.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="TripDetails.aspx" />
     <Content Include="TripManagement.aspx" />
     <Content Include="TripStudentView.aspx" />
     <Content Include="UpdateTrip.aspx" />
@@ -198,6 +202,8 @@
     <Compile Include="DAL\FeedbackDAO.cs" />
     <Compile Include="DAL\StudentLogin.cs" />
     <Compile Include="DAL\StudentLoginDAO.cs" />
+    <Compile Include="DAL\StudentStatus.cs" />
+    <Compile Include="DAL\StudentStatusDAO.cs" />
     <Compile Include="DAL\StudList.cs" />
     <Compile Include="DAL\StudListDAO.cs" />
     <Compile Include="DAL\StudReg.cs" />
@@ -265,6 +271,13 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ImmersionTrip.aspx.cs">
+      <DependentUpon>ImmersionTrip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImmersionTrip.aspx.designer.cs">
+      <DependentUpon>ImmersionTrip.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListofStud.aspx.cs">
       <DependentUpon>ListofStud.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -301,6 +314,13 @@
       <DependentUpon>ProfilePic.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="regStudent.aspx.cs">
+      <DependentUpon>regStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="regStudent.aspx.designer.cs">
+      <DependentUpon>regStudent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -343,14 +363,26 @@
     <Compile Include="StudentDetails.aspx.designer.cs">
       <DependentUpon>StudentDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="StudentStatus.cs" />
-    <Compile Include="StudentStatusDAO.cs" />
+    <Compile Include="studyTrip.aspx.cs">
+      <DependentUpon>studyTrip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studyTrip.aspx.designer.cs">
+      <DependentUpon>studyTrip.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TripDetails.aspx.cs">
+      <DependentUpon>TripDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TripDetails.aspx.designer.cs">
+      <DependentUpon>TripDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="TripStudentView.aspx.cs">
       <DependentUpon>TripStudentView.aspx</DependentUpon>

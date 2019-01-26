@@ -23,7 +23,7 @@ namespace EADP
 
             List<trip> studyTripHist = new List<trip>();
             studyTripHist = tripDAO.getStudyTripHist();
-            GridViewHist.DataSource = studyTrip;
+            GridViewHist.DataSource = studyTripHist;
             GridViewHist.DataBind();
 
         }
@@ -35,6 +35,30 @@ namespace EADP
             Session["SSTripID"] = TripID;
             Response.Redirect("regStudent.aspx");
         }
+        protected void GridViewTrip_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = GridViewTrip.SelectedRow;
+
+            Session["SSProgCode"] = row.Cells[0].Text;
+            Session["SSStartDate"] = row.Cells[1].Text;
+            Session["SSEndDate"] = row.Cells[2].Text;
+            Session["SSCountry"] = row.Cells[3].Text;
+            Session["SSLeadStaffID"] = row.Cells[8].Text;
+            Session["SSDescription"] = row.Cells[6].Text;
+            Session["SSMaxStud"] = row.Cells[7].Text;
+            Session["SSPrice"] = row.Cells[4].Text;
+            DateTime StartDate = Convert.ToDateTime(Session["SSStartDate"].ToString());
+            if (StartDate <= DateTime.Now.Date)
+            {
+                row.Enabled = false;
+                lblMsg.Text = "Cannot Edit Ongoing Trip";
+            }
+            else
+            {
+                Response.Redirect("UpdateTrip.aspx");
+            }
+        }
+
         protected void tripDelete_Click(object sender, EventArgs e)
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;

@@ -77,27 +77,55 @@
             </div>
         </div>--%>
         <%--        <asp:PlaceHolder ID="PHTripDetails" runat="server" />--%>
-        <asp:ListView ID="TripList" runat="server" DataKeyNames="TripID" ItemType="EADP.DAL.trip">
+        <asp:ListView ID="TripList" runat="server" DataKeyNames="TripID" ItemType="EADP.DAL.trip" OnItemCommand="TripList_ItemCommand">
             <ItemTemplate>
+<%--                <div class="col-sm-4">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="<%# Eval("Image") %>" style='width: 325px; height: 250px;' /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3><%# Eval("Country") %></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="descrip" runat="server"><%# Eval("Description") %></asp:Label>
+                                <%--<p><%# Eval("Description") %></p>--%>
+                            <%--</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Price: $<%# Eval("ETripPrice") %></p>
+                            </td>
+                        </tr>
+                        <asp:Button class='btn btn-primary float-right' runat='server' Text='More Details' CommandName="moreDetails" CommandArgument='<%#Eval("TripID") %>' />
+                    </table>
+                </div>--%>
                 <div class='col-sm-6'>
                     <div class='card'>
                         <div class='card-body'>
-                            <img class='card-img-top col-sm-4' src='<%#:Item.Image%>' style='width: 325px; height: 250px;'>
+                            <img runat="server" id="imgTrip" class='card-img-top col-sm-4' src='<%#Eval("Image")%>' style='width: 325px; height: 250px;' />
                             <h3 id="country" class='card-title bold'>
-                                <%#:Item.Country%>
+                                <%#Eval("Country")%>
                             </h3>
                             <p class='card-text'>
-                                <%#:Item.Description%>
+                                <%#Eval("Description")%>
+                                <%--<%#:Item.Description%>--%>
                             </p>
                             <p class='card-text'>
-                                Price: $<%#:Item.ETripPrice%>
+                                Price: $<%#Eval("ETripPrice")%>
                             </p>
                             <br />
                             <br />
                             <br />
                             <br />
                             <br />
-                            <asp:Button class='btn btn-primary float-right' runat='server' Text='More Details' OnClick='btnDetails_Click' />
+                            <br />
+                            <%--<asp:Button class='btn btn-primary float-right' runat='server' Text='More Details' OnClick='btnDetails_Click' />--%>
+                            <asp:Button class='btn btn-primary float-right' runat='server' Text='More Details' CommandName="moreDetails" CommandArgument='<%#Eval("TripID") %>' />
                             <br />
                             <br />
                             <br />

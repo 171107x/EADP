@@ -62,9 +62,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="sidenav">
-        <a href="TripManagement.aspx" class="active"><i class="fas fa-home"></i>&nbsp;&nbsp;Trip Management</a>
+        <a href="#" class="active"><i class="fas fa-home"></i>&nbsp;&nbsp;Trip Management</a>
         <a href="studyTrip.aspx" onclick="BtnRedirect_Click"><i class="fas fa-book"></i>&nbsp;&nbsp;&nbsp;Study Trips</a>
-        <a href="#ImmersionTrips"><i class="fas fa-atlas"></i>&nbsp;&nbsp;&nbsp;Immersion Trips</a>
+        <a href="ImmersionTrip.aspx"><i class="fas fa-atlas"></i>&nbsp;&nbsp;&nbsp;Immersion Trips</a>
         <a href="#Internships"><i class="fas fa-suitcase"></i>&nbsp;&nbsp;&nbsp;Internships</a>
     </div>
     <div class="container main">

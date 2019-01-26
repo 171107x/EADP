@@ -64,7 +64,7 @@
     <div class="sidenav">
         <a href="TripManagement.aspx"><i class="fas fa-home"></i>&nbsp;&nbsp;Trip Management</a>
         <a href="#"  class="active" onclick="BtnRedirect_Click"><i class="fas fa-book"></i>&nbsp;&nbsp;&nbsp;Study Trips</a>
-        <a href="#ImmersionTrips"><i class="fas fa-atlas"></i>&nbsp;&nbsp;&nbsp;Immersion Trips</a>
+        <a href="ImmersionTrip.aspx"><i class="fas fa-atlas"></i>&nbsp;&nbsp;&nbsp;Immersion Trips</a>
         <a href="#Internships"><i class="fas fa-suitcase"></i>&nbsp;&nbsp;&nbsp;Internships</a>
     </div>
     <div class="container main">
@@ -75,7 +75,7 @@
         <hr />
         <h3>Current/Future Trips</h3>
         <asp:Label ID="lblMsg" runat="server" ForeColor="Red"></asp:Label>
-        <asp:GridView ID="GridViewTrip" runat="server" CssClass="table table-bordered table-hover" AutoGenerateColumns="False">
+        <asp:GridView ID="GridViewTrip" runat="server" CssClass="table table-bordered table-hover" AutoGenerateColumns="False"  OnSelectedIndexChanged="GridViewTrip_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="TripID" HeaderText="ProgCode" />
                 <asp:BoundField DataField="StartDate" DataFormatString="{0:d}" HeaderText="Start Date" />
