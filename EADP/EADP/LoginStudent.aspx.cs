@@ -50,13 +50,13 @@ namespace EADP
             if (rec_cnt > 0)
             {
                 Session["username"] = tbEmail.Text;
-                Response.Redirect("home.aspx");
+                Response.Redirect("TripStudentView.aspx");
 
             }
             else if (staff_cnt > 0)
             {
-                Session["username"] = tbEmail.Text;
-                Response.Redirect("home.aspx");
+                Session["teacher"] = tbEmail.Text;
+                Response.Redirect("TripManagement.aspx");
             }
             else
             {

@@ -56,10 +56,10 @@
                     </asp:DropDownList><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="DdlFAS"
                 ErrorMessage="*" ForeColor="Red" InitialValue="-1"></asp:RequiredFieldValidator>                  
                 </div>                     
-        <div style="text-align:center;" draggable="auto">
-            <asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn" OnClick="Button1_Click" />
-            <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn" />
-            </div>
+        <div style="text-align:center;" draggable="auto">            
+            <asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn" OnClick="Button1_Click" />                                 
+            <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn" OnClick="Button2_Click" />
+        </div>
        <asp:Label runat="server" ID="lblResult" ForeColor="Red"></asp:Label>
         
     </div>

@@ -41,12 +41,12 @@ namespace EADP
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ExtraStudentDetails.aspx");
+            Response.Redirect("ExtraStudentDetails.aspx?id=" + Request.QueryString["id"].ToString());
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Session["page"] = "ConfirmParticulars.aspx";
+            Session["page"] = "ConfirmParticulars.aspx?id=" + Request.QueryString["id"].ToString(); 
             Response.Redirect("UpdateParticulars.aspx");
         }
     }

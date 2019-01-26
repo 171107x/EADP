@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EADP.DAL;
+using System.Data;
 
 namespace EADP
 {
@@ -15,7 +16,41 @@ namespace EADP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextBox1.Text = Request.QueryString["email"].ToString();
+
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+
+            DataSet ds = new DataSet();
+            DataTable tdData = new DataTable();
+
+            StringBuilder sqlStr = new StringBuilder();
+            sqlStr.AppendLine("select * from ResetPassword ");
+            sqlStr.AppendLine("Inner Join Student");
+            sqlStr.AppendLine("on Student.StudentAdmin = ResetPassword.StudentAdmin");
+            sqlStr.AppendLine("where ResetID = @paraResetID;");
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+
+            da.SelectCommand.Parameters.AddWithValue("paraResetID", Request.QueryString["email"].ToString());
+
+            da.Fill(ds, "TableTD");
+
+            int rec_cnt = ds.Tables["TableTD"].Rows.Count;
+            DataRow row = ds.Tables["TableTD"].Rows[0];
+
+            if (rec_cnt > 0)
+            {
+                TextBox1.Text = row["Email"].ToString();
+            }
+
+            DateTime expire = Convert.ToDateTime(row["ResetRequestDateTime"].ToString());
+            double days = (DateTime.Now - expire).TotalDays;
+            if (days > 1)
+            {
+                Response.Redirect("Expire.aspx");
+            }
+
+
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

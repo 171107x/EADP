@@ -8,6 +8,7 @@
 
     </head>
     <body>
+        <div class="container">        
         <h3>Frequently Asked Questions(F.A.Q)</h3>
         <p style="font-weight:bold;"> Q: Is Financial Assistance Scheme(F.A.S) available for me? Where do I go to apply for it?</p>
         <p> A: Financial Assistance Scheme applicants may apply for Overseas Trip simply by registering for the trip as well as filling out the form here.</p>
@@ -21,6 +22,7 @@
         <p>A: All students will be provided with basic insurance plans to cover them throughout their Overseas Trip. If any student wishes to go with their own plans, kindly inform the lecturer in charge of the Programme.</p>
         <p style="font-weight:bold;">Q: If I feel homesick anytime during the duration of the trip, is it possible for me to return home by my own first?
         <p>A: For the student's safety, we would recommend staying throughout the entire duration of the trip but should there be provided enough reason, the student will be permitted to return with the supervision of a lecturer.</p>
+        </div>
     </body>
 </html>
 </asp:Content>

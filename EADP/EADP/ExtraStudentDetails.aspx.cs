@@ -16,13 +16,38 @@ namespace EADP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["username"] = "171107x@mymail.nyp.edu.sg";
+            
             if (Session["username"] == null)
             {
                 Session["page"] = "ExtraStudentDetails.aspx";
                 Response.Redirect("LoginStudent.aspx");
-            }
+            }            
+            
+            //StudentStatusDAO tdDAO1 = new StudentStatusDAO();
+            //StudentStatus tdList = new StudentStatus();
+            //StudReg tdlist = new StudReg();
+            //tdList = tdDAO1.getdate(Request.QueryString["id"].ToString());
+            //DateTime date = tdList.StartDate;
 
+            //lblwaiting.Text = DdlWait.SelectedValue.ToString();
+            //lblpassport.Text = tbPassportNo.Text.ToString();
+            //if (tbDate.Text.ToString() != null)
+            //{
+            //    double days = (Convert.ToDateTime(tbDate.Text.ToString()) - Convert.ToDateTime(date)).TotalDays;
+            //    if (days < 182.5)
+            //    {
+            //        lbldate.Text = tbDate.Text.ToString() + " <p style='color: red;'> (Please renew your passport) </p>";
+            //    }
+            //    else
+            //    {
+            //        lbldate.Text = tbDate.Text.ToString();
+            //    }
+            //}
+
+            //lblbalance.Text = TextBox1.Text.ToString();
+            //lblfas.Text = DdlFAS.SelectedValue.ToString();
+            
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -32,11 +57,8 @@ namespace EADP
             StudentStatus tdList = new StudentStatus();
             tdList = tdDAO1.getdate(Session["Code"].ToString());
             DateTime date = tdList.StartDate;
-            double days = (Convert.ToDateTime(tbDate.Text.ToString()) - Convert.ToDateTime(date)).TotalDays;
-            if(days < 182.5)
-            {
-                lblwarning.Text = "Please renew your passport";
-            }
+
+            double days = (Convert.ToDateTime(tbDate.Text.ToString()) - Convert.ToDateTime(date)).TotalDays;            
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;           
 
             SqlConnection myConn = new SqlConnection(DBConnect);
@@ -70,22 +92,56 @@ namespace EADP
                 myTD1 = null;
             }
             
-            string TripID = Session["Code"].ToString();            
+            string TripID = Request.QueryString["id"].ToString();            
             string passportNO = tbPassportNo.Text.ToString();
             DateTime PassportExpiry = Convert.ToDateTime(tbDate.Text.ToString());
             string FASscheme = DdlFAS.SelectedValue.ToString();
             string WaitingList = DdlWait.SelectedValue.ToString();
             double PSEABalance = Convert.ToDouble(TextBox1.Text.ToString());
 
-            lblResult.Text = PassportExpiry.ToString();
+            //lblResult.Text = PassportExpiry.ToString();
 
             StudRegDAO regStudent = new StudRegDAO();
             StudReg tdlist = new StudReg();
-            regStudent.InsertStudReg(studentid, TripID, passportNO, PassportExpiry, FASscheme, WaitingList, PSEABalance);
+            
+            if (days < 182.5)
+            {
+                //lblwarning.Text = "Please renew your passport";
+                string message = "Successfuly Registered <br/> we will redirect you to home page soon  <br/> Please don't forget to renew your passport.";
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append("<script type = 'text/javascript'>");
+                sb.Append("window.onload=function(){");
+                sb.Append("alert('");
+                sb.Append(message);
+                sb.Append("')};");
+                sb.Append("</script>");
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());                
+                regStudent.InsertStudReg(studentid, TripID, passportNO, PassportExpiry, FASscheme, WaitingList, PSEABalance);
+                Response.AddHeader("REFRESH", "5;URL=TripStudentView.aspx");
+            }
+            else
+            {
+                string message = "Successfuly Registered <br/> we will redirect you to home page soon .";
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append("<script type = 'text/javascript'>");
+                sb.Append("window.onload=function(){");
+                sb.Append("alert('");
+                sb.Append(message);
+                sb.Append("')};");
+                sb.Append("</script>");
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());
+                regStudent.InsertStudReg(studentid, TripID, passportNO, PassportExpiry, FASscheme, WaitingList, PSEABalance);
+                Response.AddHeader("REFRESH", "5;URL=TripStudentView.aspx");
+            }
 
-            lblResult.Text = "Successfuly Registered \n we will redirect you to home page soon";
+            //lblResult.Text = "Successfuly Registered \n we will redirect you to home page soon";
 
-            Response.AddHeader("REFRESH", "5;URL=Home.aspx");
+            //Response.AddHeader("REFRESH", "5;URL=TripStudentView.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("TripDetails.aspx?id=" + Request.QueryString["id"].ToString());
         }
     }
 }

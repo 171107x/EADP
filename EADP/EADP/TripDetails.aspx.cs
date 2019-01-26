@@ -36,8 +36,8 @@ namespace EADP
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ExtraStudentDetails.aspx");
+        {            
+            Response.Redirect("ConfirmParticulars.aspx?id=" + Request.QueryString["id"].ToString());
         }
     }
 }

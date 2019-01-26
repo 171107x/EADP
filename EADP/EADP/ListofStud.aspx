@@ -30,7 +30,7 @@
                 </td>
             </tr>           
         </table>
-        <asp:GridView runat="server" ID="GridViewTD" CssClass="table" AutoGenerateColumns="False" OnRowCommand="GridViewTD_RowCommand" OnSelectedIndexChanged="GridViewTD_SelectedIndexChanged" OnRowDataBound="GridViewTD_RowDataBound1">
+        <asp:GridView runat="server" ID="GridViewTD"  CssClass="table table-bordered" AutoGenerateColumns="False" OnRowCommand="GridViewTD_RowCommand" OnSelectedIndexChanged="GridViewTD_SelectedIndexChanged" OnRowDataBound="GridViewTD_RowDataBound1">
         <Columns>            
             <asp:TemplateField>   
                 <ItemTemplate>

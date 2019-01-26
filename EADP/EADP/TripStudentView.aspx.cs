@@ -34,7 +34,7 @@ namespace EADP
             {
                 Session["SSTripID"] = e.CommandArgument;
                 //Lbl_description.Text = Session["SSTripID"].ToString();
-                Response.Redirect("TripDetails.aspx");
+                Response.Redirect("TripDetails.aspx?id="+e.CommandArgument);
             }
         }
     }
