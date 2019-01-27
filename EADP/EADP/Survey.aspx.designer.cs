@@ -22,85 +22,85 @@ namespace EADP {
         protected global::System.Web.UI.WebControls.Label LblAdmin;
         
         /// <summary>
-        /// tbAdmin control.
+        /// LblNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbAdmin;
+        protected global::System.Web.UI.WebControls.Label LblNo;
         
         /// <summary>
-        /// LblCountry control.
+        /// LblQ1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblCountry;
+        protected global::System.Web.UI.WebControls.Label LblQ1;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// tbQ1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.TextBox tbQ1;
         
         /// <summary>
-        /// LblSeason control.
+        /// LblQ2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblSeason;
+        protected global::System.Web.UI.WebControls.Label LblQ2;
         
         /// <summary>
-        /// RadioButtonList2 control.
+        /// tbQ2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList2;
+        protected global::System.Web.UI.WebControls.TextBox tbQ2;
         
         /// <summary>
-        /// LblCost control.
+        /// LblQ3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblCost;
+        protected global::System.Web.UI.WebControls.Label LblQ3;
         
         /// <summary>
-        /// RadioButtonList3 control.
+        /// tbQ3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList3;
+        protected global::System.Web.UI.WebControls.TextBox tbQ3;
         
         /// <summary>
-        /// LblReach control.
+        /// LblQ4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblReach;
+        protected global::System.Web.UI.WebControls.Label LblQ4;
         
         /// <summary>
-        /// RadioButtonList4 control.
+        /// tbQ4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList4;
+        protected global::System.Web.UI.WebControls.TextBox tbQ4;
         
         /// <summary>
         /// submitBtn control.

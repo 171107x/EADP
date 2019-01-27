@@ -50,14 +50,14 @@ namespace EADP.DAL
             return result;
 
         }
-        public SurveyQ getSurveyQuestions(int surveyQnsID)
+        public SurveyQ getSurveyQuestions()
         {
             DataSet ds = new DataSet();
             DataTable tdData = new DataTable();
 
             StringBuilder sqlStr = new StringBuilder();
             sqlStr.AppendLine("select * from SurveyQns");
-            sqlStr.AppendLine("Where SurveyQID = @paraSurveyQID;");
+            sqlStr.AppendLine("Where SurveyQID = (select min(SurveyQID) from SurveyQns);");
 
 
 
@@ -66,7 +66,6 @@ namespace EADP.DAL
 
 
 
-            da.SelectCommand.Parameters.AddWithValue("paraSurveyQID", surveyQnsID);
 
 
             da.Fill(ds, "TableTD");
