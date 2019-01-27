@@ -5,10 +5,11 @@
      <div class="container">
          <div class="form-group" style="margin-top:50px;">
              <h2> Feedback Form</h2>
-            <asp:Label ID="LblAdmin" runat="server" Text="Admin No"></asp:Label>       
-            <asp:TextBox ID="tbAdmin" runat="server" CssClass="form-control" Width="194px"></asp:TextBox>
-             <asp:Label ID="LblTrip" runat="server" Text="Trip No"></asp:Label>       
-            <asp:TextBox ID="tbTrip" runat="server" CssClass="form-control" Width="194px"></asp:TextBox>
+            <asp:Label ID="LblAdmin" runat="server" Text="Admin No:"></asp:Label>  &nbsp     <asp:Label ID="Lblno" runat="server"></asp:Label>
+             <br />
+             <asp:Label ID="LblTrip" runat="server" Text="Trip Code:"></asp:Label> &nbsp     <asp:Label ID="Lblcode" runat="server"></asp:Label>   
+             <br />
+
         </div>
 
     

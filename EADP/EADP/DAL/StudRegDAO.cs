@@ -89,5 +89,51 @@ namespace EADP.DAL
 
             return studentList;
         }
+        public StudentReg getTripID(String studentAdmin)
+        {
+            DataSet ds = new DataSet();
+            DataTable tdData = new DataTable();
+
+            StringBuilder sqlStr = new StringBuilder();
+            sqlStr.AppendLine("select * from RegisteredStudent");
+            sqlStr.AppendLine("Where StudentAdmin = @paraStudAdmin and TripStatus = 'Accepted';");
+
+
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+
+
+
+            da.SelectCommand.Parameters.AddWithValue("paraStudAdmin", studentAdmin);
+
+
+            da.Fill(ds, "TableTD");
+
+
+
+            int rec_cnt = ds.Tables["TableTD"].Rows.Count;
+
+            StudentReg myTD = new StudentReg();
+            if (rec_cnt > 0)
+            {
+
+
+
+                DataRow row = ds.Tables["TableTD"].Rows[0];
+                myTD.studentAdmin = row["StudentAdmin"].ToString();
+                myTD.TripID = row["TripID"].ToString();
+
+
+
+            }
+            else
+            {
+                myTD = null;
+            }
+
+            return myTD;
+        }
+
     }
 }

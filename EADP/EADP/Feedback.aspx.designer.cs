@@ -22,13 +22,13 @@ namespace EADP {
         protected global::System.Web.UI.WebControls.Label LblAdmin;
         
         /// <summary>
-        /// tbAdmin control.
+        /// Lblno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbAdmin;
+        protected global::System.Web.UI.WebControls.Label Lblno;
         
         /// <summary>
         /// LblTrip control.
@@ -40,13 +40,13 @@ namespace EADP {
         protected global::System.Web.UI.WebControls.Label LblTrip;
         
         /// <summary>
-        /// tbTrip control.
+        /// Lblcode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbTrip;
+        protected global::System.Web.UI.WebControls.Label Lblcode;
         
         /// <summary>
         /// LblRate control.
