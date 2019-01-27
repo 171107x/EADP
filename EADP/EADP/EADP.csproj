@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account.aspx" />
+    <Content Include="AddCountry.aspx" />
     <Content Include="ConfirmParticulars.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -108,11 +109,15 @@
     <Content Include="DisplaySurvey.aspx" />
     <Content Include="EditSurvey.aspx" />
     <Content Include="EditTrip.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Expire.aspx" />
     <Content Include="ExtraStudentDetails.aspx" />
     <Content Include="Feedback.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="ImmersionTrip.aspx" />
+    <Content Include="ImmTripStudView.aspx" />
     <Content Include="regStudent.aspx" />
+    <Content Include="regStudList.aspx" />
     <Content Include="ResetPassword.aspx" />
     <Content Include="scripts\jquery.color.js" />
     <Content Include="scripts\jquery.Jcrop.js" />
@@ -136,10 +141,13 @@
     <Content Include="StudAcc.aspx" />
     <Content Include="StudentDetails.aspx" />
     <Content Include="studyTrip.aspx" />
+    <Content Include="StudyTripStudView.aspx" />
+    <Content Include="StyleSheet1.css" />
     <Content Include="Survey.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="TripDetails.aspx" />
     <Content Include="TripManagement.aspx" />
+    <Content Include="TripStatus.aspx" />
     <Content Include="TripStudentView.aspx" />
     <Content Include="UpdateTrip.aspx" />
     <Content Include="wrong.aspx" />
@@ -179,6 +187,13 @@
     </Compile>
     <Compile Include="Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddCountry.aspx.cs">
+      <DependentUpon>AddCountry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCountry.aspx.designer.cs">
+      <DependentUpon>AddCountry.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfirmParticulars.aspx.cs">
       <DependentUpon>ConfirmParticulars.aspx</DependentUpon>
@@ -235,6 +250,20 @@
     <Compile Include="EditTrip.aspx.designer.cs">
       <DependentUpon>EditTrip.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expire.aspx.cs">
+      <DependentUpon>Expire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expire.aspx.designer.cs">
+      <DependentUpon>Expire.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ExtraStudentDetails.aspx.cs">
       <DependentUpon>ExtraStudentDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -276,6 +305,13 @@
     </Compile>
     <Compile Include="ImmersionTrip.aspx.designer.cs">
       <DependentUpon>ImmersionTrip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImmTripStudView.aspx.cs">
+      <DependentUpon>ImmTripStudView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImmTripStudView.aspx.designer.cs">
+      <DependentUpon>ImmTripStudView.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListofStud.aspx.cs">
       <DependentUpon>ListofStud.aspx</DependentUpon>
@@ -320,6 +356,13 @@
     <Compile Include="regStudent.aspx.designer.cs">
       <DependentUpon>regStudent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="regStudList.aspx.cs">
+      <DependentUpon>regStudList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="regStudList.aspx.designer.cs">
+      <DependentUpon>regStudList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -362,6 +405,13 @@
     <Compile Include="studyTrip.aspx.designer.cs">
       <DependentUpon>studyTrip.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StudyTripStudView.aspx.cs">
+      <DependentUpon>StudyTripStudView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudyTripStudView.aspx.designer.cs">
+      <DependentUpon>StudyTripStudView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -375,6 +425,13 @@
     </Compile>
     <Compile Include="TripDetails.aspx.designer.cs">
       <DependentUpon>TripDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TripStatus.aspx.cs">
+      <DependentUpon>TripStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TripStatus.aspx.designer.cs">
+      <DependentUpon>TripStatus.aspx</DependentUpon>
     </Compile>
     <Compile Include="TripStudentView.aspx.cs">
       <DependentUpon>TripStudentView.aspx</DependentUpon>
