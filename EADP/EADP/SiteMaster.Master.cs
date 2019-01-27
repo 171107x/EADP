@@ -15,15 +15,14 @@ namespace EADP
             {
                 Label1.Text = Session["username"].ToString();
             }
-            else if (Session["teacher"] != null)
+            else
             {
-                Label1.Text = Session["teacher"].ToString();
+                // Do whatever you were going to do.
             }
         }
         protected void Logout_OnClick(object sender, EventArgs e)
         {
             Session["username"] = null;
-            Session["teacher"] = null;
             Response.Redirect("LoginStudent.aspx");
         }
     }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeFile="StudyTripStudView.aspx.cs" Inherits="EADP.StudyTripStudView" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="StudyTripStudView.aspx.cs" Inherits="EADP.StudyTripStudView" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <style>
         .jumbotron {

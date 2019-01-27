@@ -17,6 +17,7 @@ namespace EADP
         {
             if (Session["username"] == null)
             {
+                Session["new"] = "Feedback";
                 Response.Redirect("LoginStudent.aspx");
             }
             StudList studList = new StudList();

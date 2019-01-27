@@ -22,9 +22,11 @@ namespace EADP
             surveyList = tdDAO.getSurveyID();
             GridView1.DataSource = surveyList;
             GridView1.DataBind();
+            BtnSurvey.Visible = false;
             if (GridView1.Rows.Count < 1)
             {
-                Label1.Text = "There are no Surveys at the moment.";
+                Label1.Text = "<h1 style='text-align:center;'>There are no Surveys at the moment. Create a Survey below!</h1>";
+                BtnSurvey.Visible = true;
                 GridView1.Enabled = false;
 
             }

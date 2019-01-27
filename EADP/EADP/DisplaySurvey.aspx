@@ -5,7 +5,12 @@
       <br />
     <br />
     <br />
-    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+    <style>
+        #ContentPlaceHolder1_BtnSurvey {
+            margin-left:50%;
+        }
+    </style>
+    <asp:Label ID="Label1" runat="server" Text=""></asp:Label> 
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDeleting="Click_Delete" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="SurveyQID" HeaderText="SurveyQID" />
@@ -13,6 +18,6 @@
             <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" />
         </Columns>
     </asp:GridView>
-    <p>
-    </p>
+    <asp:Button ID="BtnSurvey" runat="server" Text="Create Survey" />
+
 </asp:Content>

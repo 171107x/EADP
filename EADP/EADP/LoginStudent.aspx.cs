@@ -50,6 +50,10 @@ namespace EADP
             if (rec_cnt > 0)
             {
                 Session["username"] = tbEmail.Text;
+                if(Session["new"] != null)
+                {
+                    Response.Redirect(Session["new"] + ".aspx");
+                }
                 Response.Redirect("TripStudentView.aspx");
 
             }
