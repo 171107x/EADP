@@ -63,6 +63,9 @@
                                 <% if (Session["Username"] != null) {%>
                                 <li><a href="Account.aspx">Account</a></li>                                
                                 <li><a href="TripStatus.aspx">Trip Status</a></li>  
+                                <%}%>  
+                                 <%if(Session["teacher"]!= null) {%>
+                                <li><a href="Createsurvey.aspx">Create Survey</a></li>
                                 <%} %>                            
                                 <li><asp:LinkButton runat="server" ID="Logout" OnClick="Logout_OnClick">Logout</asp:LinkButton></li>                  
                             </ul>

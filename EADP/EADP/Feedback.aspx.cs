@@ -12,7 +12,10 @@ namespace EADP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["username"] == null)
+            {
+                Response.Redirect("LoginStudent.aspx");
+            }
         }
 
         protected void submitBtn_Click(object sender, EventArgs e)
