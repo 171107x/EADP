@@ -28,7 +28,9 @@ namespace EADP
 
         }
 
-        protected void btnInsert_Click(object sender, EventArgs e,string countryName)
+
+
+        protected void btnInsert_Click(object sender, EventArgs e)
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
 
@@ -43,7 +45,7 @@ namespace EADP
 
             sqlCmd = new SqlCommand(sqlStr.ToString(), myConn);
 
-            sqlCmd.Parameters.AddWithValue("@paraCountryName", countryName);
+            sqlCmd.Parameters.AddWithValue("@paraCountryName", textboxCountry.Text);
 
             myConn.Open();
             result = sqlCmd.ExecuteNonQuery();

@@ -62,8 +62,8 @@ namespace EADP
             sbEmailBody.Append("Dear " + UserName + ",<br/><br/>");
             sbEmailBody.Append("You have requested to reset your password");
             sbEmailBody.Append("<br/>");
-            sbEmailBody.Append("Please <a href=\"http://www.example.com/login.aspx\">login</a>");
-            //sbEmailBody.Append("Click <a href=\"http:// "+ HttpContext.Current.Request.Url.Authority +  "ResetPassword.aspx?email=" + UniqueId + "\"> here</a> if you need to reset your password" );
+            //sbEmailBody.Append("Please <a href=\"http://www.example.com/login.aspx\">login</a>");
+            sbEmailBody.Append("Click <a href=\"http://"+HttpContext.Current.Request.Url.Authority+"/ResetPassword.aspx?email=" + UniqueId + "\"> here</a> if you need to reset your password");
             sbEmailBody.Append("<br/><br/>");
             sbEmailBody.Append("The link will expire in 24hours");
 
