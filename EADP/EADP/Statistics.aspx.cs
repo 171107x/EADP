@@ -1,9 +1,11 @@
-﻿using System;
+﻿using EADP.DAL;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Net;
+using System.Text;
 using System.Web.Script.Serialization;
 using System.Web.UI.DataVisualization.Charting;
 
@@ -13,27 +15,39 @@ namespace EADP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["username"] == null)
+            {
+                Session["new"] = "Statistics";
+                Response.Redirect("LoginStudent.aspx");
+            }
             if (!IsPostBack)
             {
                 GetStudentChartInfo();
             }
-        }
-        private void checkFeedback()
-        {
+            StudList studList = new StudList();
+            StudListDAO studDAO = new StudListDAO();
+            studList = studDAO.getRegbyStudAdmin(Session["Username"].ToString());
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             using (SqlConnection myConn = new SqlConnection(DBConnect))
             {
                 myConn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT *  FROM Feedback GROUP BY StudentAdmin WHERE StudentAdmin = 171107x", myConn);
+                SqlCommand cmd = new SqlCommand("SELECT count(StudentAdmin)  FROM Feedback  WHERE StudentAdmin = @paraStudAdmin", myConn);
+                cmd.Parameters.AddWithValue("@paraStudAdmin", studList.studentAdmin.ToString());
                 int UserExist = (int)cmd.ExecuteScalar();
-                if(UserExist >0)
+                if (UserExist < 1)
                 {
-                    Label1.Text = "You currently have a feedback form that is uncompleted!";
+                    Label1.Text = "<h3>You currently have a feedback form that is uncompleted! Complete it <a href='Feedback.aspx'>here</a></h3>";
+                }
+                else
+                {
+                    Label1.Visible = false;
                 }
                 myConn.Close();
-            }
 
+
+            }
         }
+
         private void GetStudentChartInfo()
         {
             DataTable dt = new DataTable();

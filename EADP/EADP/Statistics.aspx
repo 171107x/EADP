@@ -7,7 +7,7 @@
     <div class="container">
         
          <div class="form-group">
-             <asp:Label ID="LblPercent" runat="server" Text="Survey results for Students preference in trip location  "></asp:Label>
+             <asp:Label ID="LblPercent" runat="server" Text="Survey results for Students  "></asp:Label>
              <asp:Chart ID="Chart1" runat="server" >
              <Titles>  
                     <asp:Title ShadowOffset="3" Name="Items" />  
@@ -61,7 +61,8 @@
         </tr>
     </table>
         <div class="form-group">
-             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-            </div>
+    <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="Label"></asp:Label>
+        </div>
              </div>
+     
 </asp:Content>
