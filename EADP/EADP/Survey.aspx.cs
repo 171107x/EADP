@@ -63,7 +63,8 @@ namespace EADP
             Response.Redirect("Statistics.aspx");
         }
 
-        protected void resetBtn_Click(object sender, EventArgs e)
+
+        protected void resetBtn_Click1(object sender, EventArgs e)
         {
             tbQ1.Text = String.Empty;
             tbQ2.Text = String.Empty;

@@ -31,7 +31,7 @@
         </div>
          <div style="text-align:center;" draggable="auto">
             <asp:Button ID="submitBtn" runat="server" Text="Submit" CssClass="btn" OnClick="submitBtn_Click" />
-            <asp:Button ID="resetBtn" runat="server" Text="Reset" CssClass="btn" OnClick="resetBtn_Click" />
+            <asp:Button ID="resetBtn" runat="server" Text="Reset" CssClass="btn" OnClick="resetBtn_Click1" />
             </div>
         </div>
         
