@@ -38,6 +38,7 @@ namespace EADP.DAL
                 obj.StartDate = Convert.ToDateTime(row["StartDate"]);
                 obj.EndDate = Convert.ToDateTime(row["EndDate"]);
                 obj.ETripPrice = Convert.ToInt16(row["ETripPrice"]);
+                obj.Image = row["Image"].ToString();
             }
             else
             {
@@ -94,6 +95,101 @@ namespace EADP.DAL
 
             return tripList;
         }
+        public List<trip> getTripStudyType()
+        {
+            List<trip> tripList = new List<trip>();
+            DataSet ds = new DataSet();
+            DataTable tripData = new DataTable();
+
+            StringBuilder sqlStr = new StringBuilder();
+            sqlStr.AppendLine("SELECT Trip.TripID, Trip.Country, Trip.StartDate, Trip.EndDate, Trip.ETripPrice, Trip.Duration, Trip.Description, Trip.MaxStudent, Trip.Image, Staff.StaffName FROM Trip");
+            sqlStr.AppendLine("INNER JOIN Staff");
+            sqlStr.AppendLine("ON Trip.StaffID = Staff.StaffID");
+            sqlStr.AppendLine("where GETDATE() <= Trip.EndDate AND TripType = 'Study Trip'");
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+
+
+            //da.SelectCommand.Parameters.AddWithValue("1", TripID);
+            da.Fill(ds, "TableInfo");
+
+            int rec_cnt = ds.Tables["TableInfo"].Rows.Count;
+            if (rec_cnt > 0)
+            {
+                foreach (DataRow row in ds.Tables["TableInfo"].Rows)
+                {
+                    trip myTrip = new trip();
+
+                    myTrip.TripID = Convert.ToString(row["TripID"]);
+                    myTrip.Country = row["Country"].ToString();
+                    myTrip.StartDate = Convert.ToDateTime(row["StartDate"]);
+                    myTrip.EndDate = Convert.ToDateTime(row["EndDate"]);
+                    myTrip.ETripPrice = Convert.ToDouble(row["ETripPrice"]);
+                    myTrip.Duration = Convert.ToInt16(row["Duration"]);
+                    myTrip.Description = row["Description"].ToString();
+                    myTrip.MaxStudent = Convert.ToInt16(row["MaxStudent"]);
+                    myTrip.Image = row["Image"].ToString();
+                    myTrip.StaffName = row["StaffName"].ToString();
+
+                    tripList.Add(myTrip);
+                }
+            }
+            else
+            {
+                tripList = null;
+            }
+
+            return tripList;
+        }
+        public List<trip> getTripImmType()
+        {
+            List<trip> tripList = new List<trip>();
+            DataSet ds = new DataSet();
+            DataTable tripData = new DataTable();
+
+            StringBuilder sqlStr = new StringBuilder();
+            sqlStr.AppendLine("SELECT Trip.TripID, Trip.Country, Trip.StartDate, Trip.EndDate, Trip.ETripPrice, Trip.Duration, Trip.Description, Trip.MaxStudent, Trip.Image, Staff.StaffName FROM Trip");
+            sqlStr.AppendLine("INNER JOIN Staff");
+            sqlStr.AppendLine("ON Trip.StaffID = Staff.StaffID");
+            sqlStr.AppendLine("where GETDATE() <= Trip.EndDate AND TripType = 'Immersion Trip'");
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+
+
+            //da.SelectCommand.Parameters.AddWithValue("1", TripID);
+            da.Fill(ds, "TableInfo");
+
+            int rec_cnt = ds.Tables["TableInfo"].Rows.Count;
+            if (rec_cnt > 0)
+            {
+                foreach (DataRow row in ds.Tables["TableInfo"].Rows)
+                {
+                    trip myTrip = new trip();
+
+                    myTrip.TripID = Convert.ToString(row["TripID"]);
+                    myTrip.Country = row["Country"].ToString();
+                    myTrip.StartDate = Convert.ToDateTime(row["StartDate"]);
+                    myTrip.EndDate = Convert.ToDateTime(row["EndDate"]);
+                    myTrip.ETripPrice = Convert.ToDouble(row["ETripPrice"]);
+                    myTrip.Duration = Convert.ToInt16(row["Duration"]);
+                    myTrip.Description = row["Description"].ToString();
+                    myTrip.MaxStudent = Convert.ToInt16(row["MaxStudent"]);
+                    myTrip.Image = row["Image"].ToString();
+                    myTrip.StaffName = row["StaffName"].ToString();
+
+                    tripList.Add(myTrip);
+                }
+            }
+            else
+            {
+                tripList = null;
+            }
+
+            return tripList;
+        }
+
 
         public List<trip> getTripHist()
         {
@@ -235,6 +331,8 @@ namespace EADP.DAL
             return result;
 
         }
+
+        
 
         public List<StudentReg> getStudList(string TripID)
         {

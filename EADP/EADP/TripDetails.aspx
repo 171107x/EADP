@@ -31,7 +31,7 @@
                             Price: $<asp:Label ID="lblPrc" runat="server" Text=""></asp:Label>
                         </p>
                         <br />
-                        <asp:Button class='btn btn-primary float-right' runat='server' Text='Register' OnClick="Unnamed1_Click"/>
+                        <asp:Button class='btn btn-primary float-right' runat='server' Text='Register' OnClick="Unnamed1_Click" ID="btnRegister"/>
                         <%--<asp:Button class='btn btn-primary float-right' runat='server' Text='Download Itenerary' />--%>
                         <br />
                         <br />

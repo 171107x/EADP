@@ -45,6 +45,11 @@
                     </div>
                 </div>
             </div>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item"><a class="nav-link active" id="home-tab" href="#">All trips</a></li>
+              <li class="nav-item"><a class="nav-link" id="study-tab" href="StudyTripStudView.aspx">Study Trips </a></li>
+              <li class="nav-item"><a class="nav-link" id="immersion-tab" href="ImmTripStudView.aspx">Immersion Trips </a></li>                       
+            </ul>
             <%--            <div class="col-sm-2">
                 <div class="card">
                     <div class="card-body">

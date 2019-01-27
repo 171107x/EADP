@@ -52,7 +52,7 @@ namespace EADP
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Session["Code"] = "Korea2018";
+            //Session["Code"] = "Korea2018";
             StudentStatusDAO tdDAO1 = new StudentStatusDAO();
             StudentStatus tdList = new StudentStatus();
             tdList = tdDAO1.getdate(Session["Code"].ToString());
@@ -107,7 +107,7 @@ namespace EADP
             if (days < 182.5)
             {
                 //lblwarning.Text = "Please renew your passport";
-                string message = "Successfuly Registered <br/> we will redirect you to home page soon  <br/> Please don't forget to renew your passport.";
+                string message = "Successfuly Registered"+ " < br /> " +" we will redirect you to home page soon "+ " < br /> " + "Please don't forget to renew your passport.";
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
                 sb.Append("<script type = 'text/javascript'>");
                 sb.Append("window.onload=function(){");
@@ -117,11 +117,11 @@ namespace EADP
                 sb.Append("</script>");
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());                
                 regStudent.InsertStudReg(studentid, TripID, passportNO, PassportExpiry, FASscheme, WaitingList, PSEABalance);
-                Response.AddHeader("REFRESH", "5;URL=TripStudentView.aspx");
+                Response.AddHeader("REFRESH", "1;URL=TripStudentView.aspx");
             }
             else
             {
-                string message = "Successfuly Registered <br/> we will redirect you to home page soon .";
+                string message = "Successfuly Registered "+ " < br /> " + " we will redirect you to home page soon .";
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
                 sb.Append("<script type = 'text/javascript'>");
                 sb.Append("window.onload=function(){");
@@ -131,7 +131,7 @@ namespace EADP
                 sb.Append("</script>");
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());
                 regStudent.InsertStudReg(studentid, TripID, passportNO, PassportExpiry, FASscheme, WaitingList, PSEABalance);
-                Response.AddHeader("REFRESH", "5;URL=TripStudentView.aspx");
+                Response.AddHeader("REFRESH", "1;URL=TripStudentView.aspx");
             }
 
             //lblResult.Text = "Successfuly Registered \n we will redirect you to home page soon";

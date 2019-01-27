@@ -56,14 +56,16 @@ namespace EADP
             // MailMessage class is present is System.Net.Mail namespace
             MailMessage mailMessage = new MailMessage("YourEmail@gmail.com", ToEmail);
 
-
+            
             // StringBuilder class is present in System.Text namespace
             StringBuilder sbEmailBody = new StringBuilder();
             sbEmailBody.Append("Dear " + UserName + ",<br/><br/>");
-            sbEmailBody.Append("Please click on the following link to reset your password");
+            sbEmailBody.Append("You have requested to reset your password");
             sbEmailBody.Append("<br/>");
-            sbEmailBody.Append("http://" + HttpContext.Current.Request.Url.Authority + "/ResetPassword.aspx?email=" + UniqueId);
+            sbEmailBody.Append("Please <a href=\"http://www.example.com/login.aspx\">login</a>");
+            //sbEmailBody.Append("Click <a href=\"http:// "+ HttpContext.Current.Request.Url.Authority +  "ResetPassword.aspx?email=" + UniqueId + "\"> here</a> if you need to reset your password" );
             sbEmailBody.Append("<br/><br/>");
+            sbEmailBody.Append("The link will expire in 24hours");
 
             mailMessage.IsBodyHtml = true;
 

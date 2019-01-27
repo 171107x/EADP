@@ -32,6 +32,10 @@ namespace EADP
                 GridViewHist.DataSource = tripHist;
                 GridViewHist.DataBind();
             }
+            if(Session["Username"] == null)
+            {
+
+            }
         }
 
         protected void BtnRedirect_Click(object sender, EventArgs e)
