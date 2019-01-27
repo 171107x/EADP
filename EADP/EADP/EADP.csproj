@@ -97,7 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account.aspx" />
-    <Content Include="AddCountry.aspx" />
     <Content Include="ConfirmParticulars.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -181,13 +180,6 @@
     </Compile>
     <Compile Include="Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddCountry.aspx.cs">
-      <DependentUpon>AddCountry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddCountry.aspx.designer.cs">
-      <DependentUpon>AddCountry.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfirmParticulars.aspx.cs">
       <DependentUpon>ConfirmParticulars.aspx</DependentUpon>
@@ -352,6 +344,7 @@
     </Compile>
     <Compile Include="Status.aspx.cs">
       <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Status.aspx.designer.cs">
       <DependentUpon>Status.aspx</DependentUpon>
