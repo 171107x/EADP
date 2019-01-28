@@ -17,7 +17,7 @@ namespace EADP
         {
             if (Session["username"] == null)
             {
-                Session["new"] = "Statistics";
+                //Session["new"] = "Statistics";
                 Response.Redirect("LoginStudent.aspx");
             }
             if (!IsPostBack)

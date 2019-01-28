@@ -16,6 +16,7 @@ namespace EADP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             SurveyQ tdList = new SurveyQ();
             SurveyQDAO tdDAO = new SurveyQDAO();
             List<SurveyQ> surveyList = new List<SurveyQ>();
@@ -32,6 +33,7 @@ namespace EADP
             }
             else
             {
+                Label1.Text = "<h2> Current List of Surveys </h2>";
             }
             
         }
@@ -65,6 +67,11 @@ namespace EADP
             GridViewRow row = GridView1.SelectedRow;
             Session["SurveyID"] = row.Cells[0].Text;
             Response.Redirect("EditSurvey.aspx");
+        }
+
+        protected void BtnSurvey_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Createsurvey.aspx");
         }
     }
 }

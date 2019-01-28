@@ -14,11 +14,7 @@ namespace EADP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SurveyQ tdList = new SurveyQ();
-            SurveyQDAO tdDAO = new SurveyQDAO();
-            tdList = tdDAO.getSurveyQuestions();
-            LblCountry.Text = tdList.q1.ToString();
-            LblSeason.Text = tdList.q2.ToString();
+
 
         }
 
@@ -28,7 +24,7 @@ namespace EADP
             {
                 MailMessage mailMessage = new MailMessage("nyptrip@gmail.com", TextBox1.Text);
                 // Specify the email body
-                mailMessage.Body = "Hi \n You have recently completed a trip! \n Please login at http://" + HttpContext.Current.Request.Url.Authority + "/LoginStudent.aspx"  + " \n The survey will only be available for a week.";
+                mailMessage.Body = "Hi \n You have recently completed a trip! \n Please login at <a>http://" + HttpContext.Current.Request.Url.Authority + "/LoginStudent.aspx</a>"  + " \n The survey will only be available for a week.";
                 // Specify the email Subject
                 mailMessage.Subject = "Trip Survey";
                 mailMessage.IsBodyHtml = true;

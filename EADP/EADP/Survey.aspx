@@ -12,22 +12,22 @@
     
     <div class="form-group">
             <asp:Label ID="LblQ1" runat="server" Text="Q1: Which of the following Countries would you like to travel to?"></asp:Label><br />
-            <asp:TextBox ID="tbQ1" runat="server" Width="236px"></asp:TextBox>
+            <asp:TextBox ID="tbQ1" runat="server" Width="236px"></asp:TextBox> <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="This field is required!" ControlToValidate="tbQ1" ForeColor="Red"></asp:RequiredFieldValidator>
         </div>
         <div class="form-group">
             <asp:Label ID="LblQ2" runat="server" Text="Q2: Which season would you prefer when travelling on a school trip?"></asp:Label>
             <br />
-            <asp:TextBox ID="tbQ2" runat="server" Width="236px"></asp:TextBox>
+            <asp:TextBox ID="tbQ2" runat="server" Width="236px"></asp:TextBox> <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="This field is required!" ControlToValidate="tbQ2" ForeColor="Red"></asp:RequiredFieldValidator>
         </div>
         <div class="form-group">
             <asp:Label ID="LblQ3" runat="server" Text="Q3: How much would you be willing to pay for a trip overseas?"></asp:Label>
             <br />
-            <asp:TextBox ID="tbQ3" runat="server" Width="236px"></asp:TextBox>
+            <asp:TextBox ID="tbQ3" runat="server" Width="236px"></asp:TextBox> <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="This field is required!" ControlToValidate="tbQ3" ForeColor="Red"></asp:RequiredFieldValidator>
         </div>
         <div class="form-group">
             <asp:Label ID="LblQ4" runat="server" Text="Q4: If you wanted to know more information about the school trip, would you prefer contacting the teacher or a F.A.Q? "></asp:Label>
             <br />
-            <asp:TextBox ID="tbQ4" runat="server" Width="236px"></asp:TextBox>
+            <asp:TextBox ID="tbQ4" runat="server" Width="236px"></asp:TextBox> <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="This field is required!" ControlToValidate="tbQ4" ForeColor="Red"></asp:RequiredFieldValidator>
         </div>
          <div style="text-align:center;" draggable="auto">
             <asp:Button ID="submitBtn" runat="server" Text="Submit" CssClass="btn" OnClick="submitBtn_Click" />

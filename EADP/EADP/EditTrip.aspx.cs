@@ -22,12 +22,29 @@ namespace EADP
                 string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
                 SqlConnection myConn = new SqlConnection(DBConnect);
                 DataTable dtStaff = new DataTable();
+                DataTable dtCun = new DataTable();
 
                 StringBuilder sqlStr = new StringBuilder();
+                StringBuilder sqlcountry = new StringBuilder();
                 sqlStr.AppendLine("SELECT StaffName, StaffID FROM Staff");
+                sqlcountry.AppendLine("Select CountryName From Country");
 
                 SqlDataAdapter da = new SqlDataAdapter(sqlStr.ToString(), myConn);
+                SqlDataAdapter da1 = new SqlDataAdapter(sqlcountry.ToString(), myConn);
                 da.Fill(dtStaff);
+                //DataSet ds = new DataSet();
+                da1.Fill(dtCun);
+
+
+                ddlCountry.Items.Clear();
+                ddlCountry.Items.Insert(0, new ListItem("--Select--", "-1"));
+                ddlCountry.AppendDataBoundItems = true;
+
+                ddlCountry.DataSource = dtCun;
+                ddlCountry.DataTextField = "CountryName";
+                ddlCountry.DataValueField = "CountryName";
+                ddlCountry.DataBind();
+                   
 
                 ddlStaff.Items.Clear();
                 ddlStaff.Items.Insert(0, new ListItem("--Select--", "0"));
@@ -37,6 +54,8 @@ namespace EADP
                 ddlStaff.DataValueField = "StaffID";
                 ddlStaff.DataSource = dtStaff;
                 ddlStaff.DataBind();
+
+
             }
         }
 

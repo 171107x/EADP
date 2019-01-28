@@ -30,7 +30,7 @@ namespace EADP
                     //tbCountryUD.Text = Session["SSCountry"].ToString();
                     ddlCountryUD.SelectedValue = tripList.Country.ToString();
                     //tbIDUD.Text = Session["SSLeadStaffID"].ToString();
-                    Request.Form["taDescUP"] = Session["SSDescription"].ToString();
+                    //Request.Form["taDescUP"] = Session["SSDescription"].ToString();
                     tbMaxStudUD.Text = tripList.MaxStudent.ToString();
                     tbPriceUD.Text = tripList.ETripPrice.ToString();
                     //tbCountryUD.Text = Session["SSStaffIC"].ToString();

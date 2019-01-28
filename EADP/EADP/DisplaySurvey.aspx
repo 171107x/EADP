@@ -18,6 +18,7 @@
             <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" />
         </Columns>
     </asp:GridView>
-    <asp:Button ID="BtnSurvey" runat="server" Text="Create Survey" />
+         
+    <asp:Button ID="BtnSurvey" runat="server" Text="Create Survey" OnClick="BtnSurvey_Click" />
 
 </asp:Content>

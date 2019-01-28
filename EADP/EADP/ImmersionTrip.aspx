@@ -85,14 +85,20 @@
                 <asp:BoundField DataField="Duration" HeaderText="Duration" />
                 <asp:BoundField DataField="Description" HeaderText="Description" />
                 <asp:BoundField DataField="MaxStudent" HeaderText="Maximum Student Intake" HeaderStyle-Width="10%" ItemStyle-Width="10%"
-                    FooterStyle-Width="10%" />
+                    FooterStyle-Width="10%" >
+<FooterStyle Width="10%"></FooterStyle>
+
+<HeaderStyle Width="10%"></HeaderStyle>
+
+<ItemStyle Width="10%"></ItemStyle>
+                </asp:BoundField>
                 <asp:BoundField DataField="StaffName" HeaderText="Staff In Charge" />
                 <asp:TemplateField HeaderText="Student List">
                     <ItemTemplate>
                         <asp:LinkButton ID="studList" runat="server" OnClick="studList_Click">View</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:CommandField ShowSelectButton="True" HeaderText="Update" />
+                <asp:CommandField ShowSelectButton="True" HeaderText="Update" SelectText="Update" />
                 <asp:TemplateField HeaderText="Delete">
                     <ItemTemplate>
                         <asp:LinkButton ID="tripDelete" runat="server" OnClientClick="return confirm('Delete?')" OnClick="tripDelete_Click">Delete</asp:LinkButton>

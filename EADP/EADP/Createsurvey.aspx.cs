@@ -12,7 +12,10 @@ namespace EADP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["teacher"] == null)
+            {
+                Response.Redirect("LoginStudent.aspx");
+            }
         }
 
         protected void submitBtn_Click(object sender, EventArgs e)
@@ -25,7 +28,15 @@ namespace EADP
             SurveyQ surveyObj = new SurveyQ();
             SurveyQDAO surDAO = new SurveyQDAO();
             surDAO.InsertSurveyAnswers(q1, q2, q3, q4);
-            Response.Redirect("Statistics.aspx");
+            Response.Redirect("TripManagement.aspx");
+        }
+
+        protected void resetBtn_Click(object sender, EventArgs e)
+        {
+            TextBoxq1.Text = String.Empty;
+            TextBoxq2.Text = String.Empty;
+            TextBoxq3.Text = String.Empty;
+            TextBoxq4.Text = String.Empty;
         }
     }
 }

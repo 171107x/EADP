@@ -40,6 +40,11 @@ namespace EADP
             } else if (TextBox1.Text != TextBox2.Text)
             {
                 errorMsg.Text = "You new password is different than the confirm password";
+            }
+            else if(TextBox1.Text == "")
+            {
+                errorMsg.Text = "Password field is empty!";
+
             } else
             {
                 string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
@@ -66,6 +71,9 @@ namespace EADP
             }
         }
 
-        
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Account.aspx");
+        }
     }
 }

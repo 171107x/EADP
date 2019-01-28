@@ -39,18 +39,27 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                        </button>                                     
-                        <img class="auto-style1" src="ProfilePic/nyp.png" /><a style="float:none;" class="navbar-brand" href="Home.aspx"><span></span>Trip Management System</a>
-                         
+                        </button>                            
+                        <% if (Session["Username"] != null) {%>         
+                        <img class="auto-style1" src="ProfilePic/nyp.png" /><a style="float:none;" class="navbar-brand" href="TripStudentView.aspx"><span></span>Trip Management System</a>
+                         <%}%>  
+                        <% if (Session["teacher"] != null) {%>         
+                        <img class="auto-style1" src="ProfilePic/nyp.png" /><a style="float:none;" class="navbar-brand" href="TripManagement.aspx"><span></span>Trip Management System</a>
+                         <%}%>  
                         
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
+                            <% if (Session["Username"] != null) {%>
                             <li style="color:white;"class="active"><a href="TripStudentView.aspx"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-                            <li style="color:white;"class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Trips</a></li>
                             <li style="color:white;"class="active"><a href="Statistics.aspx"><span class="glyphicon glyphicon-briefcase"></span>Statistics</a></li>
                             <li style="color:white;"class="active"><a href="FAQ.aspx"><span class="glyphicon glyphicon-earphone"></span>F.A.Q</a></li>                            
-                            
+                             <%}%>  
+                            <% if (Session["teacher"] != null) {%>
+                            <li style="color:white;"class="active"><a href="TripManagement.aspx"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                            <li style="color:white;"class="active"><a href="Statistics.aspx"><span class="glyphicon glyphicon-briefcase"></span>Statistics</a></li>
+                            <li style="color:white;"class="active"><a href="FAQ.aspx"><span class="glyphicon glyphicon-earphone"></span>F.A.Q</a></li>                            
+                             <%}%>  
                         </ul>
                         <ul class="nav navbar-nav navbar-right">                            
                             <li class="dropdown">
@@ -66,6 +75,8 @@
                                 <%}%>  
                                  <%if(Session["teacher"]!= null) {%>
                                 <li><a href="Createsurvey.aspx">Create Survey</a></li>
+                                <li><a href="DisplaySurvey.aspx">View Surveys</a></li>
+                                <li><a href="AddCountry.aspx">Add Country</a></li>
                                 <%} %>                            
                                 <li><asp:LinkButton runat="server" ID="Logout" OnClick="Logout_OnClick">Logout</asp:LinkButton></li>                  
                             </ul>

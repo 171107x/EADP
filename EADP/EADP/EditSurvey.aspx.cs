@@ -37,5 +37,13 @@ namespace EADP
             }
 
         }
+
+        protected void resetBtn_Click(object sender, EventArgs e)
+        {
+            TextBoxq1.Text = String.Empty;
+            TextBoxq2.Text = String.Empty;
+            TextBoxq3.Text = String.Empty;
+            TextBoxq4.Text = String.Empty;
+        }
     }
 }

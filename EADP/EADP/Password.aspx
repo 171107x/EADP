@@ -41,7 +41,7 @@
         </div>   
         <div style="text-align:center;" draggable="auto">
             <asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn btn-light" OnClick="Button1_Click" />
-            <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn btn-light" />
+            <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn btn-light" CausesValidation="False" OnClick="Button2_Click" />
         </div>
     </div>    
 </asp:Content>

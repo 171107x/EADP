@@ -81,7 +81,7 @@
                 </div>                     
         <div style="text-align:center;" draggable="auto">
             <asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn" OnClick="Button1_Click" />
-            <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn" />
+            <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn" OnClick="Button2_Click" />
             </div>
        <asp:Label runat="server" ID="lblResult" ForeColor="Red"></asp:Label>
         

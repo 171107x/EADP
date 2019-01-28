@@ -55,7 +55,7 @@ namespace EADP
             //Session["Code"] = "Korea2018";
             StudentStatusDAO tdDAO1 = new StudentStatusDAO();
             StudentStatus tdList = new StudentStatus();
-            tdList = tdDAO1.getdate(Session["Code"].ToString());
+            tdList = tdDAO1.getdate(Request.QueryString["id"].ToString());
             DateTime date = tdList.StartDate;
 
             double days = (Convert.ToDateTime(tbDate.Text.ToString()) - Convert.ToDateTime(date)).TotalDays;            
@@ -107,7 +107,7 @@ namespace EADP
             if (days < 182.5)
             {
                 //lblwarning.Text = "Please renew your passport";
-                string message = "Successfuly Registered"+ " < br /> " +" we will redirect you to home page soon "+ " < br /> " + "Please don't forget to renew your passport.";
+                string message = "Successfuly Registered! we will redirect you to home page soon. Please don't forget to renew your passport.";
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
                 sb.Append("<script type = 'text/javascript'>");
                 sb.Append("window.onload=function(){");
@@ -121,7 +121,7 @@ namespace EADP
             }
             else
             {
-                string message = "Successfuly Registered "+ " < br /> " + " we will redirect you to home page soon .";
+                string message = "Successfuly Registered! We will redirect you to home page soon.";
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
                 sb.Append("<script type = 'text/javascript'>");
                 sb.Append("window.onload=function(){");

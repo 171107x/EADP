@@ -23,7 +23,7 @@
     <nav class="navbar nav-tabs navbar-inverse" style="left: 0; right: 0; top: 0; height: 50px">
               <div class="container-fluid">                
                   <div style="margin-top:-10px;" class="navbar-header">                                               
-                        <img class="auto-style1" src="ProfilePic/nyp.png" /><a style="float:none;" class="navbar-brand" href="Home.aspx"><span></span>Trip Management System</a>                   
+                        <img class="auto-style1" src="ProfilePic/nyp.png" /><a style="float:none;" class="navbar-brand" href="LoginStudent.aspx"><span></span>Trip Management System</a>                   
                   </div>                              
               </div>
             </nav>

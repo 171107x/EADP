@@ -38,7 +38,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" InitialValue="-1" ErrorMessage="Please select a country." ForeColor="Red" ControlToValidate="ddlCountry"></asp:RequiredFieldValidator>
             <asp:DropDownList ID="ddlCountry" runat="server" class="form-control">
                 <asp:ListItem Value="-1">--Select--</asp:ListItem>
-                <asp:ListItem Value="Australia">Australia</asp:ListItem>
+                <%--<asp:ListItem Value="Australia">Australia</asp:ListItem>
                 <asp:ListItem Value="China">China</asp:ListItem>
                 <asp:ListItem Value="Dubai">Dubai</asp:ListItem>
                 <asp:ListItem Value="Germany">Germany</asp:ListItem>
@@ -46,7 +46,7 @@
                 <asp:ListItem Value="Korea">Korea</asp:ListItem>
                 <asp:ListItem Value="New Zealand">New Zealand</asp:ListItem>
                 <asp:ListItem Value="Thailand">Thailand</asp:ListItem>
-                <asp:ListItem Value="Vietnam">Vietnam</asp:ListItem>
+                <asp:ListItem Value="Vietnam">Vietnam</asp:ListItem>--%>
             </asp:DropDownList>
         </div>
         <%--        <div class="form-group">
@@ -80,8 +80,7 @@
             <asp:DropDownList ID="ddlTripType" runat="server" class="form-control">
                 <asp:ListItem Value="-1">--Select--</asp:ListItem>
                 <asp:ListItem Value="Study Trip">Study Trip</asp:ListItem>
-                <asp:ListItem Value="Immersion Trip">Immersion Trip</asp:ListItem>
-                <asp:ListItem Value="Internship">Internship</asp:ListItem>
+                <asp:ListItem Value="Immersion Trip">Immersion Trip</asp:ListItem>                
             </asp:DropDownList>
         </div>
         <div class="custom-file">
