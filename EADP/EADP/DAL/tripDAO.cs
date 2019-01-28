@@ -47,6 +47,50 @@ namespace EADP.DAL
 
             return obj;
         }
+        public List<trip> getListTrip(string TripID)
+        {
+            SqlDataAdapter da;
+            DataSet ds = new DataSet();
+            List<trip> tripList = new List<trip>();
+            StringBuilder sqlCommand = new StringBuilder();
+            sqlCommand.AppendLine("Select * from Trip");
+            sqlCommand.AppendLine("where TripID = @paraTripID");
+
+            trip obj = new trip();
+
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            da = new SqlDataAdapter(sqlCommand.ToString(), myConn);
+            da.SelectCommand.Parameters.AddWithValue("@paraTripID", TripID);
+
+            da.Fill(ds, "tripTable");
+            int rec_cnt = ds.Tables["tripTable"].Rows.Count;
+            if (rec_cnt > 0)
+            {
+                foreach (DataRow row in ds.Tables["TableInfo"].Rows)
+                {
+                    trip myTrip = new trip();
+
+                    myTrip.TripID = Convert.ToString(row["TripID"]);
+                    myTrip.Country = row["Country"].ToString();
+                    myTrip.StartDate = Convert.ToDateTime(row["StartDate"]);
+                    myTrip.EndDate = Convert.ToDateTime(row["EndDate"]);
+                    myTrip.ETripPrice = Convert.ToDouble(row["ETripPrice"]);
+                    myTrip.Duration = Convert.ToInt16(row["Duration"]);
+                    myTrip.Description = row["Description"].ToString();
+                    myTrip.MaxStudent = Convert.ToInt16(row["MaxStudent"]);
+                    myTrip.Image = row["Image"].ToString();
+                    myTrip.StaffName = row["StaffName"].ToString();
+
+                    tripList.Add(myTrip);
+                }
+            }
+            else
+            {
+                tripList = null;
+            }
+
+            return tripList;
+        }
 
         public List<trip> getTripInfo()
         {

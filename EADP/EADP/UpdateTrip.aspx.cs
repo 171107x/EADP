@@ -21,15 +21,18 @@ namespace EADP
             {
                 if(Session["SSProgCode"] != null)
                 {
+                    trip tripList = new trip();
+                    tripDAO newTrip = new tripDAO();
                     lblProgCode.Text = Session["SSProgCode"].ToString();
-                    tbStartDateUD.Text = Session["SSStartDate"].ToString();
-                    tbEndDateUD.Text = Session["SSEndDate"].ToString();
+                    tripList = newTrip.getTrip(Session["SSProgCode"].ToString());
+                    tbStartDateUD.Text = tripList.StartDate.ToString();
+                    tbEndDateUD.Text = tripList.EndDate.ToString();
                     //tbCountryUD.Text = Session["SSCountry"].ToString();
-                    ddlCountryUD.SelectedValue = Session["SSCountry"].ToString();
+                    ddlCountryUD.SelectedValue = tripList.Country.ToString();
                     //tbIDUD.Text = Session["SSLeadStaffID"].ToString();
-                    //Request.Form["taDescUP"]= Session["SSDescription"].ToString();
-                    tbMaxStudUD.Text = Session["SSMaxStud"].ToString();
-                    tbPriceUD.Text = Session["SSPrice"].ToString();
+                    Request.Form["taDescUP"] = Session["SSDescription"].ToString();
+                    tbMaxStudUD.Text = tripList.MaxStudent.ToString();
+                    tbPriceUD.Text = tripList.ETripPrice.ToString();
                     //tbCountryUD.Text = Session["SSStaffIC"].ToString();
                 }
                 else
